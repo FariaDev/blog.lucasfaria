@@ -1,0 +1,47 @@
+baseURL: "https://fariadev.github.io/blog.lucasfaria/"
+title: "Blog do Lucas"
+theme: "PaperMod"
+publishDir: "docs"
+
+params:
+  showDate: true
+  defaultTheme: auto # auto/light/dark
+  backgroundColor: "rgb(245, 245, 245)"
+
+  meta:
+    favicon: false
+
+  # Lista de icones sociais
+  socialIcons:
+    - name: github
+      url: "https://github.com/FariaDev"
+    - name: email
+      url: "mailto:lucasfaria947@gmail.com"
+
+  # Configurações de comentários (Cusdis), no mesmo nível que "socialIcons"
+  comments:
+    cusdis:
+      enable: true
+      appId: "3ca509ea-3999-4f5a-8b73-97f291109843"
+      host: "https://cusdis.com"
+      lang: "pt"  # Para traduzir para português, se disponível
+      style: "background: #f5f5f5; border-radius: 8px; padding: 10px;"
+
+  # Taxonomias no mesmo nível
+  taxonomies:
+    category: "categories"
+    tag: "tags"
+
+  customCSS:
+    - "css/custom.css"
+
+  assets:
+    favicon: "/favicon.ico"
+
+menu:
+  main:
+    - name: Posts
+      url: "posts/"
+      weight: 10
+
+buildDrafts: false

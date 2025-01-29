@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <section>
+    <h1>{{ .Title }}</h1>
+    <!-- Aqui entra seu formulário Loople -->
+    <form action="https://api.loople.com/...endpoint..." method="POST">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" required>
+
+      <label for="email">Seu E-mail</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="mensagem">Mensagem</label>
+      <textarea name="mensagem" id="mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+{{ end }}
