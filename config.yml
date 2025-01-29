@@ -1,5 +1,5 @@
 baseURL: "https://fariadev.github.io/blog.lucasfaria/"
-title: "Blog do Lucas"
+title: "FariaBlog"
 theme: "PaperMod"
 publishDir: "public"
 
@@ -7,6 +7,9 @@ params:
   showDate: true
   defaultTheme: auto # auto/light/dark
   backgroundColor: "rgb(245, 245, 245)"
+  footer:
+    hideCopyright: false
+  Copyright: "© 2025 FariaBlog"
 
   meta:
     favicon: false
