@@ -1,7 +1,7 @@
 baseURL: "https://fariadev.github.io/blog.lucasfaria/"
 title: "Blog do Lucas"
 theme: "PaperMod"
-publishDir: "docs"
+publishDir: "public"
 
 params:
   showDate: true
