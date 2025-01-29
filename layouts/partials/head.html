@@ -36,8 +36,18 @@
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{- end }}
 
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 {{- /* Styles */}}
-<link rel="stylesheet" href="{{ "custom.css" | absURL }}">
+<link rel="preload" href="{{ "custom.css" | absURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ "custom.css" | absURL }}"></noscript>
+
 <script src="{{ "js/cusdis-custom.js" | relURL }}"></script>
 {{- /* includes */}}
 {{- $includes := slice }}
@@ -92,12 +102,12 @@
 
 {{- /* Favicons */}}
 <link rel="icon" href="https://fariadev.github.io/blog.lucasfaria/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ site.Params.assets.favicon16x16 | default "favicon-16x16.png" | absURL }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ site.Params.assets.favicon32x32 | default "favicon-32x32.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "apple-touch-icon.png" | absURL }}">
-<link rel="mask-icon" href="{{ site.Params.assets.safari_pinned_tab | default "safari-pinned-tab.svg" | absURL }}">
-<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
-<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#2e2e33" }}">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fariadev.github.io/blog.lucasfaria/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fariadev.github.io/blog.lucasfaria/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fariadev.github.io/blog.lucasfaria/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fariadev.github.io/blog.lucasfaria/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
 
 {{- /* RSS */}}
 {{ range .AlternativeOutputFormats -}}
