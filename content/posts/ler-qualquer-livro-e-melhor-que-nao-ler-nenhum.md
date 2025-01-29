@@ -14,7 +14,7 @@ categories = ["Leitura", "Neurociência"]
 
 # **Ler qualquer livro é melhor que não ler nenhum?**
 
-👤 *Lucas* • ⏳ 5 min read • 📅 *4 dias atrás*
+👤 *Lucas* • ⏳ 5 min de leitura
 
 ---
 Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.
