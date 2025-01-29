@@ -1,15 +1,16 @@
 name: Build and Deploy Hugo
+
 on:
   push:
     branches:
       - main
 
-jobs:
+jobs:  # <-- Esta linha estava com erro de indentação
   build:
     runs-on: ubuntu-latest
 
-  permissions:
-        contents: write
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
