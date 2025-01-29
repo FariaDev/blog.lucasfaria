@@ -23,6 +23,7 @@
       {{- end }}
       {{- end }}
     </h1>
+
     {{- if .Description }}
     <div class="post-description">
       {{ .Description | markdownify }}
@@ -103,6 +104,62 @@
       </nav>
     </footer>
   {{- end }}
+  <button id="translate-button">🌎 Translate</button>
+  <div id="google_translate_element" style="display: none;"></div>
+
+  <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var translateButton = document.getElementById("translate-button");
+        var translateDiv = document.getElementById("google_translate_element");
+
+        if (translateButton) {
+            translateButton.addEventListener("click", function() {
+                if (translateDiv.style.display === "none" || translateDiv.style.display === "") {
+                    translateDiv.style.display = "inline-block";
+                    if (!document.getElementById("google_translate_script")) {
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+                        script.id = "google_translate_script";
+                        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+                        document.body.appendChild(script);
+                    }
+                } else {
+                    translateDiv.style.display = "none";
+                }
+            });
+        }
+    });
+    </script>
+
+
+<style>
+  #translate-button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+  }
+
+  #translate-button:hover {
+      background: #0056b3;
+  }
+
+  #google_translate_element {
+    max-width: 300px;
+    overflow: hidden;
+    margin: 10px auto;
+  }
+    </style>
 
 {{- end }}
 
