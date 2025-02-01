@@ -1,4 +1,4 @@
-baseURL: "https://fariadev.github.io/blog.lucasfaria/"
+baseURL: "https://fariablog.com/"
 title: "FariaBlog"
 theme: "PaperMod"
 publishDir: "public"

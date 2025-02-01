@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>FariaBlog</title>
-    <link>http://localhost:1313/blog.lucasfaria/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on FariaBlog</description>
     <generator>Hugo -- 0.142.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Feb 2025 13:49:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog.lucasfaria/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Um paralelo entre Nietzsche e Dostoiévski.</title>
-      <link>http://localhost:1313/blog.lucasfaria/posts/um-paralelo-entre-nietzsche-e-dostoievski/</link>
+      <link>http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/</link>
       <pubDate>Sat, 01 Feb 2025 13:49:00 -0300</pubDate>
-      <guid>http://localhost:1313/blog.lucasfaria/posts/um-paralelo-entre-nietzsche-e-dostoievski/</guid>
+      <guid>http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;📢 &lt;strong&gt;Crédito da imagem:&lt;/strong&gt; As imagens presentes neste artigo foram criadas utilizando ferramentas de inteligência artificial, especificamente o &lt;strong&gt;Grok&lt;/strong&gt;, desenvolvido pela &lt;strong&gt;xAI&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -23,9 +23,9 @@
     </item>
     <item>
       <title>Ler qualquer livro é melhor que não ler nenhum?</title>
-      <link>http://localhost:1313/blog.lucasfaria/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/</link>
+      <link>http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/</link>
       <pubDate>Tue, 28 Jan 2025 12:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/blog.lucasfaria/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/</guid>
+      <guid>http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;📢 &lt;strong&gt;Crédito da imagem:&lt;/strong&gt; As imagens presentes neste artigo foram criadas utilizando ferramentas de inteligência artificial, especificamente o &lt;strong&gt;DALL·E&lt;/strong&gt;, desenvolvido pela &lt;strong&gt;OpenAI&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>Fale Comigo</title>
-      <link>http://localhost:1313/blog.lucasfaria/contato/</link>
+      <link>http://localhost:1313/contato/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog.lucasfaria/contato/</guid>
+      <guid>http://localhost:1313/contato/</guid>
       <description></description>
     </item>
   </channel>
