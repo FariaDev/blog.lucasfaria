@@ -14,10 +14,12 @@ categories = ["Leitura", "Filosofia"]
 
 # **Um paralelo entre Nietzsche e Dostoiévski.**
 
-👤 *Lucas* • ⏳ 20 min de leitura
+👤 *Lucas* • ⏳ 20-25 min de leitura
 
 ---
 Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras *“Crepúsculo dos ídolos”(Nietzsche)* e *“Memórias do Subsolo”(Dostoiévski)*. Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.
+
+---
 
 ## **Friedrich Nietzsche (1844–1900)**
 Basicamente, Nietzsche desafiou a moralidade tradicional, declarou a “morte de Deus” e defendeu a criação de novos valores através da vontade de poder. O objetivo aqui não é fazer uma biografia dele, por isso explorarei apenas o que nos motiva a estudá-lo e o que ele quis dizer com sua famosa frase “Deus está morto”.
@@ -30,6 +32,8 @@ Primeiramente, suas obras e filosofia são **fundamentais** para o entendimento 
 Tal ideia foi escrita por ele no livro *“Assim falou Zaratustra”*, mas, o que ela realmente quer dizer? Ela não se refere diretamente à “pessoa” de Deus, e sim aos seus valores e moral envolvidos na religião.
 O que o autor procura dizer é que antigamente, mais especificamente na Idade Média, o homem era cheio da religião, tudo era relacionado a igreja e a Deus, ou seja, Ele era vivo lá. Atualmente, a ideia de Deus é algo que vem perdendo forças, seja pelo avanço da ciência ou por diversos outros motivos.
 Vale ressaltar, também, que Nietzsche não diz isso em bom-tom, pois querendo ou não a religião e seus valores não são tão ruins assim e de certa forma exercem um papel na sociedade, o filósofo também não diz que por hoje termos “trocado” Deus pela ciência estamos melhores que antes, ambos são ruins de acordo com ele.
+
+---
 
 ## **Fiódor Dostoiévski (1821–1881)**
 Dostoiévski é célebre por explorar a complexidade da alma humana, moralidade e religião em obras como *Crime e Castigo* e *Os Irmãos Karamázov*. Provavelmente já deve ter ouvido falar dele, já que suas obras estão na “moda” em algumas redes sociais.
@@ -44,6 +48,8 @@ Acredite ou não, mas essa frase foi dita(escrita) por Nietzsche, em sua obra *�
 Embora nunca tenham se encontrado pessoalmente, Nietzsche dedicou considerável atenção a Dostoiévski, reconhecendo nele um profundo entendimento da condição humana. No entanto, essa admiração vinha acompanhada de críticas e divergências filosóficas significativas.
 
 Nietzsche via a moral cristã, a qual o escritor russo era adepto, como uma expressão da “moralidade dos escravos”, considerada por ele como limitadora e contrária ao florescimento do indivíduo forte e autônomo. Exploraremos mais suas críticas à religião na seção “Crepúsculo dos Ídolos” e lá poderá tirar suas próprias conclusões…
+
+---
 
 ## **Crepúsculo dos Ídolos**
 Último livro escrito pelo autor enquanto lúcido, busca apresentar as principais ideias de sua filosofia. Este não é seu único título, também podendo ser chamado de “A filosofia a golpes de martelo”, o qual não deve ser mal compreendido. No início da obra, o autor explica o significado pretendido de “martelo”, o qual se assemelha a um diapasão (Instrumento metálico que permite identificar se algo é oco — ou falso, em sua filosofia — ou não), permitindo que se descubra se os Ídolos são reais ou falsos. Um fato interessante a se notar a respeito do uso do martelo, é que o autor percebe que quanto mais “oco” o deus for, mais “fiéis” ele pode ter, independentemente do quão irreal ele seja.
@@ -80,6 +86,8 @@ A verdade para Nietzsche é algo perspectivo, ou seja, cada um tem a sua. Alguns
 O que ele quis dizer nesse aforismo é que ao abolirmos a ideia de mundo das ideias (o “verdadeiro”), também abolimos o mundo aparente (o supostamente falso), portanto a concepção de verdadeiro e falso foi instaurada por Platão e para Nietzsche, ela deve ser abolida por se tratar de uma certa ilusão.
 Um exemplo para ilustrar é: se a Igreja ou o Cristianismo acabarem, acaba-se junto a eles a ideia de pecado, inferno, céu, etc. Aliás, para Nietzsche, isso nem deveria ser prometido, mas é.
 
+---
+
 ## **Memórias do Subsolo**
 ### **Introdução**
 Se Nietzsche critica o excesso de racionalidade na filosofia ocidental, Dostoiévski, por sua vez, apresenta um personagem que ilustra as consequências desse racionalismo exacerbado na vida cotidiana.
@@ -112,6 +120,8 @@ Toda essa angústia, ele tentava calar com a leitura. Ele diz que todos temos um
 ### **Cuidado com os erros de interpretação.**
 Assim como apresentado no artigo de Davi Villaça (2021), erros de interpretação são frequentemente cometidos na leitura desse livro. A primeira delas é a de que “Estas não são apenas as palavras de Dostoiévski: são as palavras de um narrador em terceira pessoa que só se manifesta no final da história” isso é especialmente explicitado no final da novela, onde “As palavras finais da novela afirmam que a história do narrador continua para além daquilo que é registrado”. Além de que a palavra do narrador é a própria vida em andamento, em sua incompletude. Também é importante fazer a distinção entre Dostoiévski e o Homem do Subsolo, o qual é o narrador do livro, “A advertência de que o narrador não é expressão direta e simples do autor pode nos colocar no caminho correto, mas pouco faz no sentido de destrinchar o emaranhado de problemas que a personagem em si representa.”(Villaça, 2021).
 
+---
+
 ## **O paralelo em si + Conclusão**
 Talvez você não tenha percebido, mas existem semelhanças entre o que Nietzsche diz em “Crepúsculo dos Ídolos” e o que Dostoiévski relata em “Memórias do Subsolo”. Vamos tentar entender o que os autores tentaram nos dizer.
 
@@ -138,6 +148,8 @@ Se rejeitarmos tanto o racionalismo extremo quanto a entrega irrestrita aos inst
 Agora, um meme para descontrair 😂
 ![A imagem mostra a capa do livro Notes from Underground de Dostoiévski ao lado de um Wojak melancólico. Acima dele, um balão de pensamento diz "he is literally me", indicando uma identificação profunda e irônica com o protagonista da obra.](https://fariadev.github.io/blog.lucasfaria/images/meme1.jpg)
 
+---
+
 ## **Referências Bibliográficas**
 1. **FELTRIN, Tatiana**. Memórias do subsolo (Dostoiévski) 🇷🇺 | Tatiana Feltrin. YouTube, 2021. Disponível em: https://www.youtube.com/watch?v=9Wgry2nbxew. Acesso em: 30 jan. 2025.
 2. **DOSTOIÉVSKI, Fiódor**. Memórias do subsolo. Tradução de Boris Schnaiderman. São Paulo: Editora 34, 2000.
@@ -145,3 +157,7 @@ Agora, um meme para descontrair 😂
 4. **VILLAÇA, Davi Lopes**. Memórias do subsolo: problemas interpretativos. Revista Universidade de São Paulo, São Paulo, v. 12, n. 20, p. 1-42, dez. 2021.
 5. **VASSOLER, Flávio Ricardo**. Resenha de Vassoler: Memórias do subsolo | Dostoiévski | Parte I. YouTube, 2023. Disponível em: https://www.youtube.com/watch?v=EgnDyBEu4X0. Acesso em: 29 jan. 2025.
 6. **TCHERNICHEVSKI, Nikolai**. O que Fazer? Tradução de Angelo Segrillo. São Paulo: Prismas, 2015.
+
+---
+
+💬 *Gostou do artigo? Deixe um comentário e compartilhe sua opinião!*

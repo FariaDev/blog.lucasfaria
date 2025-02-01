@@ -1,0 +1,19 @@
+<div id="disqus_thread"></div>
+<script>
+  // Configuração dinâmica do Disqus usando variáveis do Hugo
+  var disqus_config = function () {
+    this.page.url = '{{ .Permalink }}'; // URL única da página
+    this.page.identifier = '{{ .File.Path }}'; // Identificador único da página (você pode ajustar se preferir outro identificador)
+  };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://fariablog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>
+  Por favor, habilite o JavaScript para visualizar os
+  <a href="https://disqus.com/?ref_noscript">comentários fornecidos pelo Disqus.</a>
+</noscript>
