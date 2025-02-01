@@ -1,7 +1,8 @@
-baseURL: "fariablog.com"
+baseURL: "https://fariablog.com/"
 title: "FariaBlog"
 theme: "PaperMod"
 publishDir: "public"
+canonifyURLs: true
 
 params:
   showDate: true
