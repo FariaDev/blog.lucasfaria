@@ -40,7 +40,7 @@ params:
     - "css/custom.css"
 
   assets:
-    favicon: "https://fariadev.github.io/blog.lucasfaria/favicon.ico"
+    favicon: "https://fariablog.com/favicon.ico"
 
 menu:
   main:
