@@ -143,6 +143,7 @@ Por fim, ainda podemos fazer uma analogia entre o “Mundo verdadeiro”, ou sej
 
 ### **Conclusão**
 O que podemos concluir depois de tudo isso? Que não podemos nem valorizar muito a razão e nem valorizar pouco. Devemos buscar equilibrar, para que não nos tornemos um “Sócrates” e para não deixarmos nosso subsolo tomar nossa vida para si. Além disso, devemos sempre tentar preservar nossa liberdade e não permitir que governos, nem mandatários, nos tratem como “teclas de piano”, pois, como já foi visto, em uma hora isso pode culminar em autoritarismo…
+
 Se rejeitarmos tanto o racionalismo extremo quanto a entrega irrestrita aos instintos, como podemos encontrar equilíbrio na sociedade contemporânea?
 
 Agora, um meme para descontrair 😂
