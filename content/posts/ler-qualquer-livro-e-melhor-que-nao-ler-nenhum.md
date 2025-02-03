@@ -5,7 +5,7 @@ author = "Lucas"
 categories = ["Leitura", "Neurociência"]
 
 [cover]
-  image = "https://fariadev.github.io/blog.lucasfaria/images/capa-post.jpg"
+  image = "https://fariablog.com/images/capa-post.jpg"
   alt = "Imagem ilustrativa do post"
   caption = "Fonte: OpenAI DALL·E"
 +++

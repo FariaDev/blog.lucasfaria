@@ -5,7 +5,7 @@ author = "Lucas"
 categories = ["Leitura", "Filosofia"]
 
 [cover]
-  image = "https://fariadev.github.io/blog.lucasfaria/images/imagem-post2.jpg"
+  image = "https://fariablog.com/images/imagem-post2.jpg"
   alt = "Imagem ilustrativa do post"
   caption = "Fonte: xAI Grok"
 +++
@@ -147,7 +147,7 @@ O que podemos concluir depois de tudo isso? Que não podemos nem valorizar muito
 Se rejeitarmos tanto o racionalismo extremo quanto a entrega irrestrita aos instintos, como podemos encontrar equilíbrio na sociedade contemporânea?
 
 Agora, um meme para descontrair 😂
-![A imagem mostra a capa do livro Notes from Underground de Dostoiévski ao lado de um Wojak melancólico. Acima dele, um balão de pensamento diz "he is literally me", indicando uma identificação profunda e irônica com o protagonista da obra.](https://fariadev.github.io/blog.lucasfaria/images/meme1.jpg)
+![A imagem mostra a capa do livro Notes from Underground de Dostoiévski ao lado de um Wojak melancólico. Acima dele, um balão de pensamento diz "he is literally me", indicando uma identificação profunda e irônica com o protagonista da obra.](https://fariablog.com/images/meme1.jpg)
 
 ---
 
