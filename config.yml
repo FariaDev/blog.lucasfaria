@@ -45,7 +45,13 @@ params:
 menu:
   main:
     - name: Posts
-      url: "posts/"
+      url: /posts/
       weight: 10
+    - name: Categorias
+      url: /categories/
+      weight: 20
+    - name: Newsletter
+      url: "#"
+      weight: 30
 
 buildDrafts: false
