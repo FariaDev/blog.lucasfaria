@@ -20,7 +20,7 @@ params:
     - name: github
       url: "https://github.com/FariaDev"
     - name: email
-      url: "mailto:lucasfaria947@gmail.com"
+      url: "mailto:fariablog1@gmail.com"
 
   # Configurações de comentários (Cusdis), no mesmo nível que "socialIcons"
   comments:
