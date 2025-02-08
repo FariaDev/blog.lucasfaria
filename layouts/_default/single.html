@@ -28,9 +28,6 @@
         <a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
       {{ end }}
     </p>
-    <div class="upvote-container">
-      {{ partial "upvote.html" . }}
-  </div>
   {{ end }}
   <div class="post-meta">
     {{- partial "post_meta.html" . -}}

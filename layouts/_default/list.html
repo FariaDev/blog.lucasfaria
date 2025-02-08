@@ -109,19 +109,6 @@
       {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
       {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
 
-      <!-- Custom: Alinhando Título + Upvote -->
-      <header class="entry-header post-header-flex">
-        <!-- Título do post -->
-        <h2 class="entry-hint-parent">
-          <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
-                <!-- Upvote antes do título -->
-                <div class="upvote-container">
-                    {{ partial "upvote.html" $page }}
-                </div>
-        </h2>
-
-      </header>
-
       <!-- Categorias abaixo do título/upvote -->
       {{ if .Params.categories }}
       <p><strong>Categorias:</strong>
