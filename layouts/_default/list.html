@@ -109,6 +109,14 @@
       {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
       {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
 
+      <header class="entry-header post-header-flex">
+        <!-- Título do post -->
+        <h2 class="entry-hint-parent">
+          <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+                <!-- Upvote antes do título -->
+        </h2>
+      </header>
+
       <!-- Categorias abaixo do título/upvote -->
       {{ if .Params.categories }}
       <p><strong>Categorias:</strong>
