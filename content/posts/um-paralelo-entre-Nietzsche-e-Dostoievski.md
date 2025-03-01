@@ -7,10 +7,8 @@ categories = ["Leitura", "Filosofia"]
 [cover]
   image = "https://fariablog.com/images/imagem-post2.jpg"
   alt = "Imagem ilustrativa do post"
-  caption = "Fonte: xAI Grok"
+  caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **Grok**, desenvolvido pela **xAI**"
 +++
-
-> 📢 **Crédito da imagem:** As imagens presentes neste artigo foram criadas utilizando ferramentas de inteligência artificial, especificamente o **Grok**, desenvolvido pela **xAI**.
 
 # **Um paralelo entre Nietzsche e Dostoiévski.**
 

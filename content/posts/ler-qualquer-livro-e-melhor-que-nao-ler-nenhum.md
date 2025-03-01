@@ -7,10 +7,8 @@ categories = ["Leitura", "Neurociência"]
 [cover]
   image = "https://fariablog.com/images/capa-post.jpg"
   alt = "Imagem ilustrativa do post"
-  caption = "Fonte: OpenAI DALL·E"
+  caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **DALL·E**, desenvolvido pela **OpenAI**"
 +++
-
-> 📢 **Crédito da imagem:** As imagens presentes neste artigo foram criadas utilizando ferramentas de inteligência artificial, especificamente o **DALL·E**, desenvolvido pela **OpenAI**.
 
 # **Ler qualquer livro é melhor que não ler nenhum?**
 

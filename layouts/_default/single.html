@@ -1,8 +1,39 @@
 {{- define "main" }}
 
+<!-- Barra de progresso de leitura -->
+<div class="reading-progress-container">
+  <div class="reading-progress-bar" id="reading-progress-bar"></div>
+</div>
+
+<!-- Menu flutuante lateral -->
+<div class="floating-share-menu">
+  <button class="share-button" title="Compartilhar no Twitter" id="share-twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+  </button>
+  <button class="share-button" title="Compartilhar no Facebook" id="share-facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+  </button>
+  <button class="share-button" title="Compartilhar no LinkedIn" id="share-linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  </button>
+  <button class="share-button" title="Copiar Link" id="share-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+  </button>
+  <button class="share-button back-to-top" title="Voltar ao topo" id="back-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+</div>
+
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
+    
+    <!-- Botão translate logo após o breadcrumb (alinhado à esquerda) -->
+    <div class="translate-container" style="text-align: left; margin: 10px 0;">
+      <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
+      <div id="google_translate_element" style="display: none;"></div>
+    </div>
+    
     <h1 class="post-title entry-hint-parent">
       {{ .Title }}
       {{- if .Draft }}
@@ -35,12 +66,14 @@
     {{- partial "edit_post.html" . -}}
     {{- partial "post_canonical.html" . -}}
   </div>
-  <button id="translate-button">🌎 Translate</button>
-  <div id="google_translate_element" style="display: none;"></div>
 
   <script>
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        new google.translate.TranslateElement({ 
+            pageLanguage: 'pt', 
+            includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru', // Limita aos idiomas mais comuns
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
+        }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -50,13 +83,24 @@
         if (translateButton) {
             translateButton.addEventListener("click", function() {
                 if (translateDiv.style.display === "none" || translateDiv.style.display === "") {
-                    translateDiv.style.display = "inline-block";
+                    translateDiv.style.display = "block"; // Mudado para block em vez de inline-block
                     if (!document.getElementById("google_translate_script")) {
                         var script = document.createElement("script");
                         script.type = "text/javascript";
                         script.id = "google_translate_script";
                         script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
                         document.body.appendChild(script);
+                    }
+                    
+                    // Adicionar texto de instrução
+                    if (!document.getElementById("translate-instruction")) {
+                        var instruction = document.createElement("div");
+                        instruction.id = "translate-instruction";
+                        instruction.style.fontSize = "12px";
+                        instruction.style.marginTop = "5px";
+                        instruction.style.color = "#666";
+                        instruction.innerText = "Selecione um idioma no menu acima";
+                        translateDiv.appendChild(instruction);
                     }
                 } else {
                     translateDiv.style.display = "none";
@@ -78,7 +122,6 @@
     border-radius: 5px;
     transition: background 0.3s;
     display: inline-block;
-    margin-top: 10px;
 }
 
 #translate-button:hover {
@@ -95,9 +138,9 @@
   </header>
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}
+  
+  <!-- Sempre exibir o Table of Contents -->
   {{- partial "toc.html" . }}
-  {{- end }}
 
   {{- if .Content }}
   <div class="post-content">
@@ -126,5 +169,114 @@
   {{- end }}
 
 {{ partial "disqus.html" . }}
+
+<!-- Script para o indicador de progresso de leitura -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.getElementById('reading-progress-bar');
+    const postContent = document.querySelector('.post-content');
+    
+    if (progressBar && postContent) {
+      // Calcular o tempo estimado de leitura e mostrar no topo do artigo
+      const text = postContent.textContent;
+      const wordCount = text.split(/\s+/).length;
+      const readingTime = Math.ceil(wordCount / 200); // 200 palavras por minuto em média
+      
+      // Adiciona o tempo de leitura após o título
+      const postHeader = document.querySelector('.post-header');
+      if (postHeader) {
+        const readingTimeDiv = document.createElement('div');
+        readingTimeDiv.className = 'reading-time';
+        readingTimeDiv.innerHTML = `Tempo de leitura: ${readingTime} min`;
+        postHeader.appendChild(readingTimeDiv);
+      }
+      
+      // Atualiza a barra de progresso conforme o usuário rola a página
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        
+        const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        progressBar.style.width = scrolled + '%';
+      });
+    }
+  });
+</script>
+
+<!-- Script para os botões de compartilhamento -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Botões de compartilhamento
+    const shareTwitter = document.getElementById('share-twitter');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareLink = document.getElementById('share-link');
+    const backToTop = document.getElementById('back-to-top');
+    
+    const pageUrl = window.location.href;
+    const pageTitle = document.title;
+    
+    if (shareTwitter) {
+      shareTwitter.addEventListener('click', function() {
+        window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
+      });
+    }
+    
+    if (shareFacebook) {
+      shareFacebook.addEventListener('click', function() {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, '_blank');
+      });
+    }
+    
+    if (shareLinkedin) {
+      shareLinkedin.addEventListener('click', function() {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`, '_blank');
+      });
+    }
+    
+    if (shareLink) {
+      shareLink.addEventListener('click', function() {
+        navigator.clipboard.writeText(pageUrl)
+          .then(() => {
+            // Mostrar mensagem de sucesso
+            const tooltip = document.createElement('div');
+            tooltip.className = 'copy-tooltip';
+            tooltip.textContent = 'Link copiado!';
+            document.body.appendChild(tooltip);
+            
+            setTimeout(() => {
+              tooltip.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+              tooltip.classList.remove('show');
+              setTimeout(() => {
+                document.body.removeChild(tooltip);
+              }, 300);
+            }, 2000);
+          });
+      });
+    }
+    
+    if (backToTop) {
+      // Mostrar/ocultar botão "voltar ao topo" baseado na posição de rolagem
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.style.opacity = '1';
+        } else {
+          backToTop.style.opacity = '0';
+        }
+      });
+      
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
 
 {{- end }}{{/* end main */}}

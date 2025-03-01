@@ -4,7 +4,38 @@ theme: "PaperMod"
 publishDir: "public"
 canonifyURLs: true
 
+# Ativar o mecanismo de busca
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # Necessário para busca
+
 params:
+  # Ativar Table of Contents e Breadcrumbs por padrão
+  ShowToc: true
+  TocOpen: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+
+  # Ativar busca
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+  # Configuração da página inicial
+  homeInfoParams:
+    Title: "Bem-vindo ao<br>meu <span style='color:#F76F53 !important;font-style:italic;'>universo</span> de ideias"
+    Content: >
+      Um jovem de 17 anos compartilhando insights, reflexões e descobertas.
+      Um espaço para explorar o que estou lendo, estudando e pensando no momento.
+
+  # Configurações gerais
   showDate: true
   defaultTheme: auto # auto/light/dark
   backgroundColor: "rgb(245, 245, 245)"
@@ -53,5 +84,12 @@ menu:
     - name: Newsletter
       url: "#"
       weight: 30
+    - name: Search
+      url: /search/
+      weight: 40
 
 buildDrafts: false
+
+# Configuração de paginação - define quantos posts por página
+paginate: 5
+paginatePath: "page"

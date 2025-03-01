@@ -4,6 +4,29 @@
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ .Site.Title }} (Alt + H)">
                 {{ .Site.Title }}
             </a>
+            
+            {{- if (not site.Params.disableThemeToggle) }}
+            <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
+                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            {{- end }}
         </div>
         <ul id="menu" class="menu">
             <li>
@@ -14,6 +37,9 @@
             </li>
             <li>
                 <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
+            </li>
+            <li>
+                <a href="/search/" class="menu-item">Pesquisar</a>
             </li>
         </ul>
     </nav>
@@ -28,18 +54,64 @@
 </div>
 
 <style>
-/* Estilo do menu e botões */
+/* Estilo minimalista para o menu e botões similar à imagem de referência */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    border-bottom: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Estilos para o botão de tema */
+#theme-toggle {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--primary);
+    height: 24px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    margin-top: 2px; /* Ajuste fino para alinhar com o texto */
+}
+
+#theme-toggle svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+#theme-toggle:hover {
+    opacity: 1;
+}
+
+html.dark #moon {
+    display: none;
+}
+
+html:not(.dark) #sun {
+    display: none;
 }
 
 .menu {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -47,16 +119,17 @@
 
 .menu-item {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--primary);
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 3px;
+    transition: color 0.2s;
+    padding: 0;
+    border-bottom: none;
 }
 
 .menu-item:hover {
-    background-color: var(--primary);
-    color: var(--theme);
+    color: var(--primary);
+    opacity: 0.8;
+    border-bottom: none;
 }
 
 /* Modal */
@@ -95,18 +168,18 @@
 /* Responsividade */
 @media screen and (max-width: 768px) {
     .nav {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        padding: 1rem;
     }
 
     .menu {
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 1.5rem;
     }
 
     .menu-item {
-        padding: 0.5rem 1rem;
+        padding: 0;
+        font-size: 0.8rem;
     }
 
     .modal-content {
@@ -157,4 +230,27 @@ document.addEventListener('keydown', function(e) {
         document.body.style.overflow = 'auto';
     }
 });
+
+// Script para o botão de alternar tema
+document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains("dark")) {
+        localStorage.setItem("pref-theme", 'dark');
+    } else {
+        localStorage.setItem("pref-theme", 'light');
+    }
+});
+
+// Verifica o tema preferido ao carregar a página
+(() => {
+    let darkMode = localStorage.getItem("pref-theme");
+    
+    if (darkMode === "dark") {
+        document.documentElement.classList.add('dark');
+    } else if (darkMode === "light") {
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+    }
+})();
 </script>

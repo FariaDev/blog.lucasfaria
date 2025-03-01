@@ -13,8 +13,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/categories/filosofia/">
-<link rel="preload" href="http://localhost:1313/custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="http://localhost:1313/custom.css"></noscript>
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+<noscript><link rel="stylesheet" href="http://localhost:1313/css/custom.css"></noscript>
 
 <script src="http://localhost:1313/js/cusdis-custom.js"></script>
 <link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.71e7d4db96912713f2a216fca8e80b55a8dac916f0a88c02f2477b7aa944f08c.css" integrity="sha256-cefU25aRJxPyohb8qOgLVajayRbwqIwC8kd7eqlE8Iw=" rel="preload stylesheet" as="style">
@@ -70,12 +70,32 @@
 </noscript>
 </head>
 
-<body class="list" id="top"><header class="header">
+<body class="list"><header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="FariaBlog (Alt + H)">
                 FariaBlog
             </a>
+            <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
+                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
         </div>
         <ul id="menu" class="menu">
             <li>
@@ -86,6 +106,9 @@
             </li>
             <li>
                 <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" class="menu-item">Pesquisar</a>
             </li>
         </ul>
     </nav>
@@ -203,12 +226,58 @@ document.getElementById("subscribe-form").addEventListener("submit", async funct
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    border-bottom: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+ 
+#theme-toggle {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--primary);
+    height: 24px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;  
+}
+
+#theme-toggle svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+#theme-toggle:hover {
+    opacity: 1;
+}
+
+html.dark #moon {
+    display: none;
+}
+
+html:not(.dark) #sun {
+    display: none;
 }
 
 .menu {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -216,16 +285,17 @@ document.getElementById("subscribe-form").addEventListener("submit", async funct
 
 .menu-item {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--primary);
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 3px;
+    transition: color 0.2s;
+    padding: 0;
+    border-bottom: none;
 }
 
 .menu-item:hover {
-    background-color: var(--primary);
-    color: var(--theme);
+    color: var(--primary);
+    opacity: 0.8;
+    border-bottom: none;
 }
 
  
@@ -264,18 +334,18 @@ document.getElementById("subscribe-form").addEventListener("submit", async funct
  
 @media screen and (max-width: 768px) {
     .nav {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        padding: 1rem;
     }
 
     .menu {
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 1.5rem;
     }
 
     .menu-item {
-        padding: 0.5rem 1rem;
+        padding: 0;
+        font-size: 0.8rem;
     }
 
     .modal-content {
@@ -326,81 +396,46 @@ document.addEventListener('keydown', function(e) {
         document.body.style.overflow = 'auto';
     }
 });
-</script>
-<main class="main"> 
 
-<button id="translate-button">🌎 Translate</button>
-  <div id="google_translate_element" style="display: none;"></div>
 
-  <script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains("dark")) {
+        localStorage.setItem("pref-theme", 'dark');
+    } else {
+        localStorage.setItem("pref-theme", 'light');
     }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var translateButton = document.getElementById("translate-button");
-        var translateDiv = document.getElementById("google_translate_element");
-
-        if (translateButton) {
-            translateButton.addEventListener("click", function() {
-                if (translateDiv.style.display === "none" || translateDiv.style.display === "") {
-                    translateDiv.style.display = "inline-block";
-                    if (!document.getElementById("google_translate_script")) {
-                        var script = document.createElement("script");
-                        script.type = "text/javascript";
-                        script.id = "google_translate_script";
-                        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-                        document.body.appendChild(script);
-                    }
-                } else {
-                    translateDiv.style.display = "none";
-                }
-            });
-        }
-    });
-    </script>
+});
 
 
-<style>
-  #translate-button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s;
-      display: inline-block;
-      margin-top: 10px;
-      margin-bottom: 10px;
-  }
+(() => {
+    let darkMode = localStorage.getItem("pref-theme");
+    
+    if (darkMode === "dark") {
+        document.documentElement.classList.add('dark');
+    } else if (darkMode === "light") {
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+    }
+})();
+</script>
 
-  #translate-button:hover {
-      background: #0056b3;
-  }
-
-  #google_translate_element {
-    max-width: 300px;
-    overflow: hidden;
-    margin: 10px auto;
-  }
-    </style>
-  <header class="page-header">
+    <main class="main"> 
+  <header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/categories/">Categories</a></div>
     <h1>
       Filosofia
     </h1>
   </header>
 
-    <article class="post-entry"> 
-<figure class="entry-cover"><img loading="lazy" src="https://fariablog.com/images/imagem-post2.jpg" alt="Imagem ilustrativa do post">
-</figure>
+    <article class="post-entry">
+      
+      
 
       <header class="entry-header post-header-flex">
         
         <h2 class="entry-hint-parent">
           <a href="http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/">Um paralelo entre Nietzsche e Dostoiévski.</a>
-                
         </h2>
       </header>
 
@@ -418,8 +453,7 @@ document.addEventListener('keydown', function(e) {
       
       <div class="entry-content">
         <p>
-           📢 Crédito da imagem: As imagens presentes neste artigo foram criadas utilizando ferramentas de inteligência artificial, especificamente o Grok, desenvolvido pela xAI.
-Um paralelo entre Nietzsche e Dostoiévski. 👤 Lucas • ⏳ 20-25 min de leitura
+          Um paralelo entre Nietzsche e Dostoiévski. 👤 Lucas • ⏳ 20-25 min de leitura
 Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras “Crepúsculo dos ídolos”(Nietzsche) e “Memórias do Subsolo”(Dostoiévski). Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.
 ...
         </p>
@@ -492,6 +526,19 @@ Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a ra
     })
 
 </script>
+
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const theme = localStorage.getItem('pref-theme');
+            if (theme === 'dark') {
+                document.body.classList.add('dark');
+            } else if (theme === 'light') {
+                document.body.classList.remove('dark');
+            }
+        });
+    </script>
 </body>
 
-</html>
+</html> 

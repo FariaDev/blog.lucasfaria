@@ -5,11 +5,128 @@ body.single {
     background-color: rgb(245, 245, 245) !important;
 }
 
+/* Adiciona a fonte Junicode */
+@font-face {
+  font-family: 'Junicode';
+  src: url('/fonts/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('/fonts/Junicode-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('/fonts/junicode.italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('/fonts/junicode.bold-italic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cor temática personalizada */
+:root {
+  --accent-color: #F76F53;
+}
+
 /* Ajusta o container do post */
 .post-single {
     background: transparent !important; /* Para garantir que ele não fique branco */
     padding: 20px;
     border-radius: 8px;
+}
+
+/* Estilo para o home_info, voltando ao fundo normal */
+.first-entry.home-info {
+    min-height: auto;
+    margin: 60px auto 80px;
+    padding: 0 20px;
+    font-family: 'Junicode', serif;
+    text-align: center;
+    max-width: 900px;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+/* Estilo para o título principal do home_info com Junicode */
+.first-entry.home-info h1 {
+    font-family: 'Junicode', serif;
+    font-size: 5.2em;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #222;
+    letter-spacing: -0.02em;
+}
+
+/* Para destacar uma palavra no título com a cor accent */
+.first-entry.home-info h1 .highlight {
+    color: var(--accent-color);
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Estilo para a descrição/conteúdo do home_info */
+.first-entry.home-info .entry-content {
+    font-family: 'Junicode', serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Ajustes responsivos para o título em telas menores */
+@media (max-width: 768px) {
+    .first-entry.home-info h1 {
+        font-size: 3.5em;
+    }
+    
+    .first-entry.home-info .entry-content {
+        font-size: 1.1em;
+    }
+}
+
+/* Estilo para botões no home_info, como na imagem */
+.home-info-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.home-info-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Junicode', serif;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.home-info-button.primary {
+    background-color: #333;
+    color: white;
+}
+
+.home-info-button.secondary {
+    background-color: rgba(240, 240, 240, 0.8);
+    color: #333;
 }
 
 .post-header-flex {
@@ -39,20 +156,36 @@ body.single {
     margin: auto;
     font-size: 18px;
     line-height: 1.8;
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+  /* ======== Títulos ======== */
+  .post-content h1,
+  .post-content h2,
+  .post-content h3,
+  .post-content h4,
+  .post-content h5,
+  .post-content h6,
+  .post-title {
+    font-family: inherit;
     color: #333;
   }
 
-  /* ======== Títulos ======== */
   .post-content h1 {
     font-size: 2.2em;
     font-weight: bold;
     margin-bottom: 0.5em;
+    color: #333;
   }
 
   .post-content h2 {
     font-size: 1.8em;
     font-weight: bold;
     margin-top: 2em;
+    border-bottom: 2px solid rgba(247, 111, 83, 0.2);
+    padding-bottom: 0.2em;
   }
 
   .post-content h3 {
@@ -63,11 +196,37 @@ body.single {
 
   /* ======== Estilizando Blocos de Citação ======== */
   .post-content blockquote {
-    background: #f8f9fa;
-    padding: 15px 20px;
-    border-left: 4px solid #0077cc;
+    background: #faf3f0;
+    padding: 20px 25px;
+    border-left: 4px solid var(--accent-color);
     font-style: italic;
-    color: #555;
+    font-family: 'Junicode', serif;
+    color: #333;
+    font-size: 1.05em;
+    margin: 30px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 0 8px 8px 0;
+    line-height: 1.6;
+  }
+  
+  .post-content blockquote strong,
+  .post-content blockquote b {
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  
+  .post-content blockquote em {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: rgba(247, 111, 83, 0.4);
+    text-decoration-thickness: 2px;
+  }
+  
+  /* Ajuste para modo escuro */
+  html.dark .post-content blockquote {
+    background: rgba(247, 111, 83, 0.08);
+    color: #e0e0e0;
+    border-left-color: #ff8f78;
   }
 
   /* ======== Listas ======== */
@@ -152,14 +311,19 @@ body.single {
 }
 
 #google_translate_element {
-  position: fixed;
-  top: 10px;
-  right: 10px; /* Move para o canto superior direito */
-  z-index: 9999; /* Garante que fique acima dos outros elementos */
-  background: #fff; /* Dá um fundo branco para melhor visibilidade */
-  padding: 5px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 9999;
+  background: #fff;
+  padding: 8px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.translate-container {
+  position: relative;
 }
 
 .goog-te-gadget {
@@ -169,14 +333,654 @@ body.single {
 }
 
 .goog-te-gadget span {
-  display: none; /* Esconde o texto "Google Translate" */
+  display: none;
 }
 
 .goog-te-combo {
   padding: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #fff;
+}
+
+/* Parágrafos mais espaçados */
+.post-content p {
+  margin-bottom: 1.5em;
+}
+
+/* Tempo estimado de leitura */
+.reading-time {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Destacando links no texto */
+.post-content a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 111, 83, 0.3);
+  transition: all 0.2s ease;
+}
+
+.post-content a:hover {
+  color: #d84e34; /* Versão mais escura do accent-color */
+  border-bottom-color: rgba(216, 78, 52, 0.6);
+}
+
+/* Marcação de texto destacado */
+.post-content mark {
+  background: rgba(255, 235, 59, 0.4);
+  padding: 0 3px;
+}
+
+/* Melhorias na visualização de código */
+.post-content pre {
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin: 25px 0;
+  overflow: auto;
+}
+
+/* Estilo para notas especiais */
+.post-content .note {
+  background-color: #f5f5f5;
+  border-left: 4px solid #0077cc;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Animação suave ao carregar a página */
+.post-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+/* Suporte para modo escuro mais suave nos olhos */
+html.dark .post-content {
+  color: rgba(220, 220, 220, 0.9);
+}
+
+html.dark .post-content a {
+  color: #ff8f78; /* Versão mais clara da cor temática para modo escuro */
+  border-bottom-color: rgba(255, 143, 120, 0.3);
+}
+
+html.dark .post-content a:hover {
+  color: #ffb3a5;
+  border-bottom-color: rgba(255, 179, 165, 0.6);
+}
+
+html.dark .post-content h1 {
+  color: #ff8f78;
+}
+
+html.dark .menu-item:hover {
+  color: #ff8f78;
+}
+
+html.dark .menu-item::after {
+  background-color: #ff8f78;
+}
+
+html.dark .logo a:hover {
+  color: #ff8f78;
+}
+
+html.dark #theme-toggle:hover {
+  color: #ff8f78;
+}
+
+html.dark .note-title {
+  color: #ff8f78;
+}
+
+html.dark .share-button:hover {
+  color: #ff8f78;
+}
+
+/* Barra de progresso de leitura */
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  z-index: 1000;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, var(--accent-color), #ffb74d);
+  transition: width 0.2s ease;
+}
+
+/* Estilos para as notas especiais */
+.note {
+  margin: 1.5em 0;
+  padding: 15px 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.note-title {
+  font-family: 'Junicode', serif;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+  color: var(--accent-color);
+}
+
+.note-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tipos de notas */
+.note-info {
+  border-left-color: #0077cc;
+  background-color: rgba(0, 119, 204, 0.05);
+}
+
+.note-warning {
+  border-left-color: #e67e22;
+  background-color: rgba(230, 126, 34, 0.05);
+}
+
+.note-tip {
+  border-left-color: #27ae60;
+  background-color: rgba(39, 174, 96, 0.05);
+}
+
+.note-danger {
+  border-left-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+/* Suporte para modo escuro */
+html.dark .note {
+  background-color: rgba(30, 30, 30, 0.6);
+  border-left-color: #ff8f78;
+}
+
+html.dark .note-info {
+  background-color: rgba(0, 119, 204, 0.1);
+}
+
+html.dark .note-warning {
+  background-color: rgba(230, 126, 34, 0.1);
+}
+
+html.dark .note-tip {
+  background-color: rgba(39, 174, 96, 0.1);
+}
+
+html.dark .note-danger {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Menu flutuante de compartilhamento */
+.floating-share-menu {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.share-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.share-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  color: var(--accent-color);
+}
+
+/* Ocultar em dispositivos móveis */
+@media (max-width: 768px) {
+  .floating-share-menu {
+    display: none;
+  }
+}
+
+/* Suporte para modo escuro */
+html.dark .share-button {
+  background-color: #333;
+  color: #eee;
+}
+
+html.dark .share-button:hover {
+  color: #5e9eff;
+}
+
+/* Tooltip para copiar link */
+.copy-tooltip {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.copy-tooltip.show {
+  opacity: 1;
+}
+
+/* Ajuste para o botão "voltar ao topo" */
+.back-to-top {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#translate-button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+#translate-button:hover {
+    background: #d84e34; /* Versão mais escura do accent-color */
+}
+
+/* Ajuste para o botão de tema */
+#theme-toggle:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+/* Animação do modal */
+.modal.show {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Post Content - Voltando para a fonte do sistema para o corpo do texto */
+.post-content {
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-item {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--primary);
+    transition: color 0.2s;
+    padding: 0;
+    border-bottom: none;
+    font-family: inherit;
+    position: relative;
+}
+
+.menu-item:hover {
+    color: #F76F53;
+    opacity: 1;
+    border-bottom: none;
+}
+
+/* Adiciona um underline animado nos itens do menu */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #F76F53;
+    transition: width 0.3s ease;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}
+
+/* Estilo para o título do blog */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: inherit;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: var(--accent-color);
+}
+
+/* Estilos para remover a barra de rolagem desnecessária */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Ajustes adicionais para o menu */
+.menu {
+    border-right: none;
+    overflow: visible;
+}
+
+.nav {
+    border-right: none;
+    overflow: visible;
+}
+
+/* Força itens do menu a usarem a cor laranja no hover */
+.menu .menu-item:hover {
+    color: #F76F53 !important;
+}
+
+.menu-item::after {
+    background-color: #F76F53 !important;
+}
+
+/* Remove COMPLETAMENTE qualquer barra de rolagem lateral */
+body, html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+.container {
+    overflow-x: hidden !important;
+}
+
+.nav, .menu {
+    border-right: none !important;
+    overflow: visible !important;
+}
+
+#translate-instruction {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Estilos para o tema escuro */
+html.dark #google_translate_element {
+  background: #333;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .goog-te-combo {
+  background: #222;
+  color: #eee;
+  border-color: #444;
+}
+
+html.dark #translate-instruction {
+  color: #aaa;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  #google_translate_element {
+    width: 180px;
+  }
+  
+  .translate-container {
+    margin: 5px 0;
+  }
+  
+  #translate-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Ajustes para o home_info no modo escuro */
+html.dark .first-entry.home-info h1 {
+  color: #f8f8f8; /* Cor clara para o título no modo escuro */
+}
+
+html.dark .first-entry.home-info .entry-content {
+  color: #c5c5c5; /* Cor mais clara para o conteúdo no modo escuro */
+}
+
+html.dark .first-entry.home-info h1 .highlight {
+  color: #ff8f78; /* Versão mais clara da cor de destaque para modo escuro */
+}
+
+/* Ajustes adicionais para modo escuro */
+html.dark .post-entry {
+  background-color: rgba(46, 46, 46, 0.3);
+}
+
+html.dark .post-entry h2 a {
+  color: #e0e0e0;
+}
+
+html.dark .post-entry .entry-content {
+  color: #b0b0b0;
+}
+
+html.dark .post-entry p {
+  color: #c0c0c0;
+}
+
+html.dark .post-entry a {
+  color: #ff8f78;
+}
+
+html.dark .categories-list a {
+  color: #d0d0d0;
+}
+
+html.dark .categories-list a:hover {
+  color: #ff8f78;
+}
+
+/* Botões no modo escuro */
+html.dark .home-info-button.primary {
+  background-color: #ff8f78;
+  color: #111;
+}
+
+html.dark .home-info-button.secondary {
+  background-color: rgba(80, 80, 80, 0.8);
+  color: #eee;
+}
+
+html.dark .home-info-button:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s;
+}
+
+/* Ajuste para breadcrumbs no modo escuro */
+html.dark .breadcrumbs {
+  color: #c0c0c0;
+}
+
+html.dark .breadcrumbs a {
+  color: #d5d5d5;
+}
+
+html.dark .breadcrumbs a:hover {
+  color: #ff8f78;
+}
+
+/* Ajuste para títulos de posts no modo escuro */
+html.dark .post-title {
+  color: #f8f8f8 !important;
+}
+
+html.dark .post-content h1,
+html.dark .post-content h2,
+html.dark .post-content h3,
+html.dark .post-content h4,
+html.dark .post-content h5,
+html.dark .post-content h6 {
+  color: #e0e0e0;
+}
+
+html.dark .post-content h1 {
+  color: #ff8f78;
+}
+
+html.dark .post-content h2 {
+  color: #e0e0e0;
+  border-bottom: 2px solid rgba(255, 143, 120, 0.3);
+}
+
+html.dark .post-description {
+  color: #c5c5c5;
+}
+
+html.dark .post-meta {
+  color: #a0a0a0;
+}
+
+html.dark .toc {
+  background-color: rgba(50, 50, 50, 0.3);
+}
+
+html.dark .toc a {
+  color: #c5c5c5;
+}
+
+html.dark .toc a:hover {
+  color: #ff8f78;
+}
+
+html.dark .toc .toc-title {
+  color: #e0e0e0;
+}
+
+/* Ajustes para código e outros elementos no modo escuro */
+html.dark .post-content code {
+  background-color: rgba(70, 70, 70, 0.5);
+  color: #ffb0a0;
+}
+
+html.dark .post-content pre {
+  background-color: #2d2d2d !important;
+}
+
+html.dark .post-content table {
+  border-color: #555;
+}
+
+html.dark .post-content th {
+  background-color: #444;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+html.dark .post-content td {
+  border-color: #555;
+  color: #c5c5c5;
+}
+
+html.dark .post-content hr {
+  background-color: #555;
+}
+
+html.dark .post-tags a {
+  background-color: rgba(80, 80, 80, 0.4);
+  color: #d0d0d0;
+}
+
+html.dark .post-tags a:hover {
+  background-color: rgba(255, 143, 120, 0.2);
+  color: #ff8f78;
+}
+
+html.dark .reading-time {
+  color: #a0a0a0;
+}
+
+/* Elementos de navegação no modo escuro */
+html.dark .paginav {
+  background-color: rgba(60, 60, 60, 0.3);
+  border-color: #444;
+}
+
+html.dark .paginav .title {
+  color: #c5c5c5;
+}
+
+html.dark .paginav a {
+  color: #d0d0d0;
+}
+
+html.dark .paginav a:hover .title {
+  color: #ff8f78;
+}
+
+html.dark .prev-next a:hover {
+  background-color: rgba(255, 143, 120, 0.1);
+}
+
+html.dark .pagination {
+  color: #c5c5c5;
+}
+
+html.dark .pagination a {
+  color: #d0d0d0;
+}
+
+html.dark .pagination a:hover {
+  color: #ff8f78;
+}
+
+html.dark .page-number.current {
+  background-color: #ff8f78;
+  color: #222;
+}
+
+html.dark .page-number:not(.current) {
+  background-color: rgba(60, 60, 60, 0.5);
+}
+
+/* Ajuste para o botão de tradução no modo escuro */
+html.dark #translate-button {
+  background-color: #ff8f78;
+  color: #222;
+}
+
+html.dark #translate-button:hover {
+  background-color: #ffb0a0;
 }
