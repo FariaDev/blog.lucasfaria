@@ -435,21 +435,24 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
   
   <div class="translate-container" style="text-align: center; margin: 10px 0;">
     <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
-    <div id="google_translate_element" style="display: none;"></div>
+    <div id="google_translate_element" style="display: none;">
+        <button id="close-translate" title="Fechar tradutor">✕</button>
+    </div>
   </div>
 
   <script>
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ 
-            pageLanguage: 'pt', 
+        new google.translate.TranslateElement({
+            pageLanguage: 'pt',
             includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru', 
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
         var translateButton = document.getElementById("translate-button");
         var translateDiv = document.getElementById("google_translate_element");
+        var closeButton = document.getElementById("close-translate");
 
         if (translateButton) {
             translateButton.addEventListener("click", function() {
@@ -462,7 +465,7 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
                         script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
                         document.body.appendChild(script);
                     }
-                    
+
                     
                     if (!document.getElementById("translate-instruction")) {
                         var instruction = document.createElement("div");
@@ -476,6 +479,13 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
                 } else {
                     translateDiv.style.display = "none";
                 }
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                translateDiv.style.display = "none";
             });
         }
     });
@@ -499,10 +509,28 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
         background: #0056b3;
     }
 
+    #close-translate {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        line-height: 1;
+    }
+
+    #close-translate:hover {
+        color: #333;
+    }
+
     #google_translate_element {
-      max-width: 300px;
-      overflow: hidden;
-      margin: 10px auto;
+        position: relative;
+        max-width: 300px;
+        overflow: hidden;
+        margin: 10px auto;
     }
   </style>
 
@@ -531,8 +559,7 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
       
       <div class="entry-content">
         <p>
-          Um paralelo entre Nietzsche e Dostoiévski. 👤 Lucas • ⏳ 20-25 min de leitura
-Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras “Crepúsculo dos ídolos”(Nietzsche) e “Memórias do Subsolo”(Dostoiévski). Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.
+          Um paralelo entre Nietzsche e Dostoiévski. Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras “Crepúsculo dos ídolos”(Nietzsche) e “Memórias do Subsolo”(Dostoiévski). Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.
 ...
         </p>
       </div>
@@ -565,8 +592,7 @@ Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a ra
       
       <div class="entry-content">
         <p>
-          Ler qualquer livro é melhor que não ler nenhum? 👤 Lucas • ⏳ 5 min de leitura
-Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.
+          Ler qualquer livro é melhor que não ler nenhum? Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.
 ...
         </p>
       </div>

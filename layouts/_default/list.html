@@ -49,21 +49,24 @@
   <!-- Botão translate após home_info e antes da lista de posts, apenas na página inicial -->
   <div class="translate-container" style="text-align: center; margin: 10px 0;">
     <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
-    <div id="google_translate_element" style="display: none;"></div>
+    <div id="google_translate_element" style="display: none;">
+        <button id="close-translate" title="Fechar tradutor">✕</button>
+    </div>
   </div>
 
   <script>
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ 
-            pageLanguage: 'pt', 
+        new google.translate.TranslateElement({
+            pageLanguage: 'pt',
             includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru', // Limita aos idiomas mais comuns
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
         var translateButton = document.getElementById("translate-button");
         var translateDiv = document.getElementById("google_translate_element");
+        var closeButton = document.getElementById("close-translate");
 
         if (translateButton) {
             translateButton.addEventListener("click", function() {
@@ -76,7 +79,7 @@
                         script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
                         document.body.appendChild(script);
                     }
-                    
+
                     // Adicionar texto de instrução
                     if (!document.getElementById("translate-instruction")) {
                         var instruction = document.createElement("div");
@@ -90,6 +93,13 @@
                 } else {
                     translateDiv.style.display = "none";
                 }
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                translateDiv.style.display = "none";
             });
         }
     });
@@ -113,10 +123,28 @@
         background: #0056b3;
     }
 
+    #close-translate {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        line-height: 1;
+    }
+
+    #close-translate:hover {
+        color: #333;
+    }
+
     #google_translate_element {
-      max-width: 300px;
-      overflow: hidden;
-      margin: 10px auto;
+        position: relative;
+        max-width: 300px;
+        overflow: hidden;
+        margin: 10px auto;
     }
   </style>
   {{- end }}
@@ -165,7 +193,7 @@
           «&nbsp;{{ i18n "prev_page" | default "Anterior" }}&nbsp;
         </a>
         {{- end }}
-        
+
         <!-- Exibir os números de página -->
         <div class="page-numbers">
           {{- $ellipsed := false -}}
@@ -180,7 +208,7 @@
               {{- $shouldEllipse = not $ellipsed -}}
               {{- $ellipsed = true -}}
             {{- end -}}
-            
+
             {{- if $showNumber }}
               <a class="page-number{{ if eq . $paginator }} current{{ end }}" href="{{ .URL | absURL }}">
                 {{- .PageNumber -}}
@@ -190,7 +218,7 @@
             {{- end -}}
           {{- end -}}
         </div>
-        
+
         {{- if $paginator.HasNext }}
         <a class="next" href="{{ $paginator.Next.URL | absURL }}">
           {{- i18n "next_page" | default "Próximo" }}&nbsp;»
@@ -198,7 +226,7 @@
         {{- end }}
       </nav>
     </footer>
-    
+
     <style>
       .pagination {
         display: flex;
@@ -207,7 +235,7 @@
         margin: 2rem 0;
         gap: 0.5rem;
       }
-      
+
       .prev, .next, .page-number {
         padding: 0.5rem 1rem;
         background-color: #f8f9fa;
@@ -216,21 +244,21 @@
         border-radius: 4px;
         transition: background-color 0.2s;
       }
-      
+
       .prev:hover, .next:hover, .page-number:hover {
         background-color: #e9ecef;
       }
-      
+
       .page-number.current {
         background-color: var(--primary);
         color: white;
       }
-      
+
       .page-numbers {
         display: flex;
         gap: 0.5rem;
       }
-      
+
       .page-ellipsis {
         display: flex;
         align-items: center;
