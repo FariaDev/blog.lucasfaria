@@ -90,6 +90,6 @@ menu:
 
 buildDrafts: false
 
-# Configuração de paginação - define quantos posts por página
-paginate: 5
-paginatePath: "page"
+pagination:
+  pagerSize: 5
+  path: "page"

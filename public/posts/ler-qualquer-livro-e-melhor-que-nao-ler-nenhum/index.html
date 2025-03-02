@@ -451,13 +451,15 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
 <article class="post-single">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
-    
+
     
     <div class="translate-container" style="text-align: left; margin: 10px 0;">
       <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
-      <div id="google_translate_element" style="display: none;"></div>
+      <div id="google_translate_element" style="display: none;">
+          <button id="close-translate" title="Fechar tradutor">✕</button>
+      </div>
     </div>
-    
+
     <h1 class="post-title entry-hint-parent">
       Ler qualquer livro é melhor que não ler nenhum?
     </h1>
@@ -477,21 +479,22 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
 
   <script>
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ 
-            pageLanguage: 'pt', 
+        new google.translate.TranslateElement({
+            pageLanguage: 'pt',
             includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru', 
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
         var translateButton = document.getElementById("translate-button");
         var translateDiv = document.getElementById("google_translate_element");
+        var closeButton = document.getElementById("close-translate");
 
         if (translateButton) {
             translateButton.addEventListener("click", function() {
                 if (translateDiv.style.display === "none" || translateDiv.style.display === "") {
-                    translateDiv.style.display = "block"; 
+                    translateDiv.style.display = "block";
                     if (!document.getElementById("google_translate_script")) {
                         var script = document.createElement("script");
                         script.type = "text/javascript";
@@ -499,7 +502,7 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
                         script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
                         document.body.appendChild(script);
                     }
-                    
+
                     
                     if (!document.getElementById("translate-instruction")) {
                         var instruction = document.createElement("div");
@@ -515,38 +518,63 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
                 }
             });
         }
+
+        if (closeButton) {
+            closeButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                translateDiv.style.display = "none";
+            });
+        }
     });
-    </script>
+  </script>
 
 
   <style>
-#translate-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-    display: inline-block;
-}
+    #translate-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+        display: inline-block;
+    }
 
-#translate-button:hover {
-    background: #0056b3;
-}
+    #translate-button:hover {
+        background: #0056b3;
+    }
 
-#google_translate_element {
-    display: none;
-    margin-top: 10px;
-}
+    #close-translate {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        line-height: 1;
+    }
 
+    #close-translate:hover {
+        color: #333;
+    }
+
+    #google_translate_element {
+        position: relative;
+        max-width: 300px;
+        overflow: hidden;
+        margin: 10px 0;  
+    }
   </style>
   </header> 
 <figure class="entry-cover"><img loading="eager" src="https://fariablog.com/images/capa-post.jpg" alt="Imagem ilustrativa do post">
         <p>📢 <strong>Crédito da imagem:</strong> Imagem criada utilizando ferramentas de inteligência artificial, especificamente o <strong>DALL·E</strong>, desenvolvido pela <strong>OpenAI</strong></p>
 </figure>
-  
+
   <div class="toc" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px;">
     <details  open>
         <summary accesskey="c" title="(Alt + C)" style="font-weight: bold; cursor: pointer;">
@@ -709,13 +737,13 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
   document.addEventListener('DOMContentLoaded', function() {
     const progressBar = document.getElementById('reading-progress-bar');
     const postContent = document.querySelector('.post-content');
-    
+
     if (progressBar && postContent) {
       
       const text = postContent.textContent;
       const wordCount = text.split(/\s+/).length;
       const readingTime = Math.ceil(wordCount / 200); 
-      
+
       
       const postHeader = document.querySelector('.post-header');
       if (postHeader) {
@@ -724,13 +752,13 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
         readingTimeDiv.innerHTML = `Tempo de leitura: ${readingTime} min`;
         postHeader.appendChild(readingTimeDiv);
       }
-      
+
       
       window.addEventListener('scroll', function() {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
         const clientHeight = document.documentElement.clientHeight;
-        
+
         const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
         progressBar.style.width = scrolled + '%';
       });
@@ -747,28 +775,29 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
     const shareLinkedin = document.getElementById('share-linkedin');
     const shareLink = document.getElementById('share-link');
     const backToTop = document.getElementById('back-to-top');
-    
+    const topLink = document.getElementById('top-link'); 
+
     const pageUrl = window.location.href;
     const pageTitle = document.title;
-    
+
     if (shareTwitter) {
       shareTwitter.addEventListener('click', function() {
         window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
       });
     }
-    
+
     if (shareFacebook) {
       shareFacebook.addEventListener('click', function() {
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, '_blank');
       });
     }
-    
+
     if (shareLinkedin) {
       shareLinkedin.addEventListener('click', function() {
         window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`, '_blank');
       });
     }
-    
+
     if (shareLink) {
       shareLink.addEventListener('click', function() {
         navigator.clipboard.writeText(pageUrl)
@@ -778,11 +807,11 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
             tooltip.className = 'copy-tooltip';
             tooltip.textContent = 'Link copiado!';
             document.body.appendChild(tooltip);
-            
+
             setTimeout(() => {
               tooltip.classList.add('show');
             }, 10);
-            
+
             setTimeout(() => {
               tooltip.classList.remove('show');
               setTimeout(() => {
@@ -792,7 +821,7 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
           });
       });
     }
-    
+
     if (backToTop) {
       
       window.addEventListener('scroll', function() {
@@ -802,8 +831,18 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
           backToTop.style.opacity = '0';
         }
       });
-      
+
       backToTop.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    if (topLink) { 
+      topLink.addEventListener('click', function(event) {
+        event.preventDefault();
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
