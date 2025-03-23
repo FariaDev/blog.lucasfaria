@@ -1,7 +1,7 @@
 {{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
-<div class="toc" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px;">
+<div class="toc">
     <details {{if (.Param "TocOpen") }} open{{ end }}>
         <summary accesskey="c" title="(Alt + C)" style="font-weight: bold; cursor: pointer;">
             <span class="details">{{- i18n "toc" | default "Índice" }}</span>
@@ -114,6 +114,14 @@
 .toc summary {
     color: var(--primary);
     margin-bottom: 10px;
+}
+
+.toc {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
 }
 </style>
 {{- end }} 

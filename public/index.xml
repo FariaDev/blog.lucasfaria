@@ -4,7 +4,7 @@
     <title>FariaBlog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on FariaBlog</description>
-    <generator>Hugo -- 0.142.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 01 Feb 2025 13:49:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
