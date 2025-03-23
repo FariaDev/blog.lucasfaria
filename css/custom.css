@@ -318,7 +318,7 @@ body.single {
   background: #fff;
   padding: 8px;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   width: 200px;
 }
 
@@ -874,19 +874,27 @@ html.dark .post-meta {
 }
 
 html.dark .toc {
-  background-color: rgba(50, 50, 50, 0.3);
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 html.dark .toc a {
-  color: #c5c5c5;
+  color: #e0e0e0;
 }
 
 html.dark .toc a:hover {
   color: #ff8f78;
+  text-decoration: underline;
 }
 
-html.dark .toc .toc-title {
-  color: #e0e0e0;
+html.dark .toc .toc-title,
+html.dark .toc summary,
+html.dark .toc .details {
+  color: #ffffff;
+}
+
+html.dark .toc details {
+  border-color: #404040;
 }
 
 /* Ajustes para código e outros elementos no modo escuro */
