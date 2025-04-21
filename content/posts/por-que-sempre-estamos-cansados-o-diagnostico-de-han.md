@@ -98,14 +98,14 @@ Em seu livro “Por que nós dormimos” o neurocientista Matthew Walker diz que
 
 Não vou explorar as causas exatas de por que dormimos tão mal assim, vamos nos concentrar apenas em como dormir melhor. Por sorte, Walker escreveu algumas dicas de como melhorar seu sono, ele possui um apêndice específico sobre isso, intitulado “Doze Dicas para um Sono Saudável”, aqui vão elas:
 
-1. Regularidade: Ir para a cama e acordar nos mesmos horários todos os dias, inclusive nos fins de semana. Ele enfatiza muito a importância disso para regular o relógio biológico.
-2. Temperatura: Manter o quarto frio, pois uma leve queda na temperatura corporal ajuda a iniciar o sono.
-3. Escuridão: Garantir que o quarto esteja o mais escuro possível.
-4. Evitar Álcool e Cafeína: Especialmente perto da hora de dormir. Ele explica como o álcool fragmenta o sono e a cafeína bloqueia os sinais de sonolência.
-5. Não Ficar na Cama Acordado: Se não conseguir dormir após cerca de 20 minutos, levantar-se e fazer algo relaxante em outro lugar até sentir sono novamente, para não associar a cama à frustração.
-6. Rotina Relaxante: Criar um ritual calmante antes de dormir (ler um livro físico, tomar um banho morno, meditar), evitando telas brilhantes.
-7. Exercício Físico: Praticar exercícios regularmente, mas evitar atividades intensas muito perto da hora de dormir.
-8. Luz Solar: Expor-se à luz natural pela manhã para ajudar a regular o ciclo circadiano.
+1. **Regularidade**: Ir para a cama e acordar nos mesmos horários todos os dias, inclusive nos fins de semana. Ele enfatiza muito a importância disso para regular o relógio biológico.
+2. **Temperatura**: Manter o quarto frio, pois uma leve queda na temperatura corporal ajuda a iniciar o sono.
+3. **Escuridão**: Garantir que o quarto esteja o mais escuro possível.
+4. **Evitar Álcool e Cafeína**: Especialmente perto da hora de dormir. Ele explica como o álcool fragmenta o sono e a cafeína bloqueia os sinais de sonolência.
+5. **Não Ficar na Cama Acordado**: Se não conseguir dormir após cerca de 20 minutos, levantar-se e fazer algo relaxante em outro lugar até sentir sono novamente, para não associar a cama à frustração.
+6. **Rotina Relaxante**: Criar um ritual calmante antes de dormir (ler um livro físico, tomar um banho morno, meditar), evitando telas brilhantes.
+7. **Exercício Físico**: Praticar exercícios regularmente, mas evitar atividades intensas muito perto da hora de dormir.
+8. **Luz Solar**: Expor-se à luz natural pela manhã para ajudar a regular o ciclo circadiano.
 
 Ademais, pode ser útil para seu descanso fazer atividades físicas constantes, evitar usos prolongados de celulares, televisão, etc. 
 
