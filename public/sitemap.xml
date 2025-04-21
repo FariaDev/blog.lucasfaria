@@ -3,27 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-02-01T13:49:00-03:00</lastmod>
+    <lastmod>2025-04-21T14:48:09-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-02-01T13:49:00-03:00</lastmod>
+    <lastmod>2025-04-21T14:48:09-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/filosofia/</loc>
-    <lastmod>2025-02-01T13:49:00-03:00</lastmod>
+    <lastmod>2025-04-21T14:48:09-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/leitura/</loc>
-    <lastmod>2025-02-01T13:49:00-03:00</lastmod>
+    <loc>http://localhost:1313/categories/neuroci%C3%AAncia/</loc>
+    <lastmod>2025-04-21T14:48:09-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/</loc>
+    <lastmod>2025-04-21T14:48:09-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-04-21T14:48:09-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/leitura/</loc>
     <lastmod>2025-02-01T13:49:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/</loc>
     <lastmod>2025-02-01T13:49:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/</loc>
-    <lastmod>2025-01-28T12:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/neuroci%C3%AAncia/</loc>
     <lastmod>2025-01-28T12:00:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/contato/</loc>

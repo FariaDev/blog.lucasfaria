@@ -398,27 +398,50 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-document.getElementById("theme-toggle")?.addEventListener("click", () => {
-    document.documentElement.classList.toggle('dark');
-    if (document.documentElement.classList.contains("dark")) {
+const themeToggle = document.getElementById("theme-toggle");
+const htmlElement = document.documentElement;
+
+
+function setTheme(theme) {
+    if (theme === 'dark') {
+        htmlElement.classList.add('dark');
         localStorage.setItem("pref-theme", 'dark');
     } else {
+        htmlElement.classList.remove('dark');
         localStorage.setItem("pref-theme", 'light');
     }
+}
+
+
+themeToggle?.addEventListener("click", () => {
+    const isDark = htmlElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
 });
 
 
 (() => {
-    let darkMode = localStorage.getItem("pref-theme");
+    const savedTheme = localStorage.getItem("pref-theme");
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (darkMode === "dark") {
-        document.documentElement.classList.add('dark');
-    } else if (darkMode === "light") {
-        document.documentElement.classList.remove('dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme(prefersDark ? 'dark' : 'light');
+    }
+    
+    
+    if (themeToggle) {
+        themeToggle.style.display = 'inline-block';
     }
 })();
+
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    const savedTheme = localStorage.getItem("pref-theme");
+    if (!savedTheme) {
+        setTheme(e.matches ? 'dark' : 'light');
+    }
+});
 </script>
 
     <main class="main"> 
@@ -427,6 +450,39 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
       Neurociência
     </h1>
   </header>
+
+    <article class="post-entry">
+      
+      
+
+      <header class="entry-header post-header-flex">
+        
+        <h2 class="entry-hint-parent">
+          <a href="http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/">Por que sempre estamos cansados: o diagnóstico de Han</a>
+        </h2>
+      </header>
+
+      
+      
+      <p><strong>Categorias:</strong>
+        
+          <a href="http://localhost:1313/categories/neuroci%C3%AAncia">Neurociência</a>
+        
+          <a href="http://localhost:1313/categories/filosofia">Filosofia</a>
+        
+      </p>
+    
+
+      
+      <div class="entry-content">
+        <p>
+          Por que sempre estamos cansados: o diagnóstico de Han Quando foi a última vez que você se sentiu exausto? Provavelmente deve ter sido recentemente, e não deve ter ocorrido apenas uma única vez nas últimas semanas. Mas, se parar para observar, todos estamos assim. Isso não aparenta ser um cansaço saudável, aquele que com um final de semana de descanso se resolve, mas sim um “cansaço infinito”, você até tenta descansar, mas não consegue. Felizmente, o filósofo e teórico cultural sul-coreano Byung-Chul Han tentou desvendar a origem dessa fadiga crônica em sua obra “Sociedade do Cansaço”. Usarei ela como base para esse artigo, mas também tentarei acrescentar alguns conceitos e insights que obtive durante a leitura de seu livro.
+...
+        </p>
+      </div>
+
+      <a class="entry-link" aria-label="post link to Por que sempre estamos cansados: o diagnóstico de Han" href="http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/"></a>
+    </article>
 
     <article class="post-entry">
       

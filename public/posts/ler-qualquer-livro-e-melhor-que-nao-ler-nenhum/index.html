@@ -399,27 +399,50 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-document.getElementById("theme-toggle")?.addEventListener("click", () => {
-    document.documentElement.classList.toggle('dark');
-    if (document.documentElement.classList.contains("dark")) {
+const themeToggle = document.getElementById("theme-toggle");
+const htmlElement = document.documentElement;
+
+
+function setTheme(theme) {
+    if (theme === 'dark') {
+        htmlElement.classList.add('dark');
         localStorage.setItem("pref-theme", 'dark');
     } else {
+        htmlElement.classList.remove('dark');
         localStorage.setItem("pref-theme", 'light');
     }
+}
+
+
+themeToggle?.addEventListener("click", () => {
+    const isDark = htmlElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
 });
 
 
 (() => {
-    let darkMode = localStorage.getItem("pref-theme");
+    const savedTheme = localStorage.getItem("pref-theme");
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (darkMode === "dark") {
-        document.documentElement.classList.add('dark');
-    } else if (darkMode === "light") {
-        document.documentElement.classList.remove('dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme(prefersDark ? 'dark' : 'light');
+    }
+    
+    
+    if (themeToggle) {
+        themeToggle.style.display = 'inline-block';
     }
 })();
+
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    const savedTheme = localStorage.getItem("pref-theme");
+    if (!savedTheme) {
+        setTheme(e.matches ? 'dark' : 'light');
+    }
+});
 </script>
 
     <main class="main">
@@ -575,7 +598,7 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
         <p>📢 <strong>Crédito da imagem:</strong> Imagem criada utilizando ferramentas de inteligência artificial, especificamente o <strong>DALL·E</strong>, desenvolvido pela <strong>OpenAI</strong></p>
 </figure>
 
-  <div class="toc" style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px;">
+  <div class="toc">
     <details  open>
         <summary accesskey="c" title="(Alt + C)" style="font-weight: bold; cursor: pointer;">
             <span class="details">Sumário</span>
@@ -626,6 +649,14 @@ document.getElementById("theme-toggle")?.addEventListener("click", () => {
 .toc summary {
     color: var(--primary);
     margin-bottom: 10px;
+}
+
+.toc {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
 }
 </style> 
   <div class="post-content"><h1 id="ler-qualquer-livro-é-melhor-que-não-ler-nenhum"><strong>Ler qualquer livro é melhor que não ler nenhum?</strong><a hidden class="anchor" aria-hidden="true" href="#ler-qualquer-livro-é-melhor-que-não-ler-nenhum">#</a></h1>

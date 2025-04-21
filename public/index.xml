@@ -4,10 +4,19 @@
     <title>FariaBlog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on FariaBlog</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo -- 0.146.4</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2025 13:49:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 21 Apr 2025 15:15:02 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Por que sempre estamos cansados: o diagnóstico de Han</title>
+      <link>http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/</link>
+      <pubDate>Mon, 21 Apr 2025 15:15:02 -0300</pubDate>
+      <guid>http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/</guid>
+      <description>&lt;h1 id=&#34;por-que-sempre-estamos-cansados-o-diagnóstico-de-han&#34;&gt;&lt;strong&gt;Por que sempre estamos cansados: o diagnóstico de Han&lt;/strong&gt;&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;Quando foi a última vez que você se sentiu exausto? Provavelmente deve ter sido recentemente, e não deve ter ocorrido apenas uma única vez nas últimas semanas. Mas, se parar para observar, todos estamos assim. Isso não aparenta ser um cansaço saudável, aquele que com um final de semana de descanso se resolve, mas sim um “cansaço infinito”, você até tenta descansar, mas não consegue.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Um paralelo entre Nietzsche e Dostoiévski.</title>
       <link>http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/</link>
