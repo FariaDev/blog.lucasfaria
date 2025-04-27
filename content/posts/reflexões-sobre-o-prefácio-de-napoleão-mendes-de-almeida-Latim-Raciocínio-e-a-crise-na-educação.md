@@ -89,7 +89,7 @@ Não é o que os alunos vão fazer com o estudo, mas o que o estudo vai fazer do
 
 Por fim, não devemos desviar o estudo para “especialização em questiúnculas de pronúncia” ou melhor dizendo, coisas superficiais. Não permita que a disciplina seja desvirtuada e o eruditismo transformado em balofo, pretensioso e estéril. 
 
-Sapere aude.
+*Sapere aude.*
 
 ## Bibliografia
 * Feynman, R. P. (1985). O Senhor Está Brincando, Sr. Feynman! (R. Leighton, Ed.). Editora da Universidade de Brasília
