@@ -13,7 +13,7 @@ categories = ["Educação", "Leitura"]
 # Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação
 
 ---
-Alguns dias atrás comecei a estudar latim e para isso estou usando a Gramática Latina de Napoleão Mendes de Almeida. Mas, ao ler o prefácio da obra, me encantei com as opiniões e justificativas do autor sobre as razões de se estudar latim e resolvi compará-las ao estudo de outros assuntos e também à educação em geral, visto que compartilhamos opiniões semelhantes.
+Alguns dias atrás comecei a estudar latim e para isso estou usando a *Gramática Latina de Napoleão Mendes de Almeida*. Mas, ao ler o prefácio da obra, me encantei com as opiniões e justificativas do autor sobre as razões de se estudar latim e resolvi compará-las ao estudo de outros assuntos e também à educação em geral, visto que compartilhamos opiniões semelhantes.
 
 Escrevi esse texto de uma forma um pouco diferente do que estou acostumado a escrever, pois meu objetivo aqui era complementar o que li e compartilhar com os leitores esse precioso conhecimento. 
 
@@ -22,7 +22,7 @@ Ele inicia falando sobre três eminentes matemáticos de renome internacional qu
 ## 1. A Observação dos Matemáticos: Decoreba vs. Raciocínio
 >“Chegados ao Brasil, ficamos admirados com o cabedal de fórmulas decoradas de matemática com que os estudantes brasileiros deixam o curso secundário, fórmulas que na Itália — os três professores eram catedráticos de diferentes faculdades italianas — são ensinadas só no segundo ano de faculdade; ficamos, porém, chocados com a pobreza de raciocínio, com a falta de ilação dos estudantes brasileiros; pedimos a Vossa Excelência que na reforma que se projeta se dê menos matemática e MAIS LATIM no curso secundário, para que possamos ensinar matemática no curso superior”
 
-Essa observação feita por eles sobre a pobreza de raciocínio de alunos brasileiros também foi feita por Richard Feynman em sua obra: *"O Senhor Está Brincando, Sr. Feynman!" (Surely You're Joking, Mr. Feynman!)*: 
+Essa observação feita por eles sobre a pobreza de raciocínio de alunos brasileiros também foi feita pelo ganhador do Prêmio Nobel de Física, Richard Feynman, em sua obra: *"O Senhor Está Brincando, Sr. Feynman!" (Surely You're Joking, Mr. Feynman!)*: 
 
 >"Depois de muito investigar, descobri que os alunos tinham memorizado tudo, mas não sabiam o que aquilo significava."
 
@@ -31,7 +31,9 @@ Ele também destacou a falta de interação e discussão entre os estudantes, o 
 ## 2. A Conexão Latim-Matemática e a Interdisciplinaridade
 >“2 — O professor Albanese costumava dizer — e muitas pessoas são disto prova — ‘Dêem-me um bom aluno de latim, que farei dele um grande matemático’.”
 
-Aqui está outra citação que discorre sobre a importância da interdisciplinaridade, penso que nos dias atuais atingimos um elevado nível de especificidade. Não produzimos mais polímatas como antigamente, hoje em dia produzimos pessoas muito inteligentes somente em determinados assuntos extremamente específicos. Acredito que isso seja devido à repartição de disciplinas que as faculdades fazem, fazendo com que você foque em um determinado assunto durante todo seu mestrado, doutorado, etc. sem dar lugar a outras disciplinas também importantes, mas que não relacionadas diretamente ao seu tópico de estudo. 
+Aqui está outra citação que discorre sobre a importância da interdisciplinaridade.
+
+Penso que nos dias atuais atingimos um elevado nível de especificidade, não produzimos mais polímatas como antigamente, hoje em dia produzimos pessoas muito inteligentes somente em determinados assuntos extremamente específicos. Acredito que isso seja devido à repartição de disciplinas que as faculdades fazem, fazendo com que você foque em um determinado assunto durante todo seu mestrado, doutorado, etc. sem dar lugar a outras disciplinas também importantes, mas que não relacionadas diretamente ao seu tópico de estudo. 
 
 ## 3. O Mito da Ausência do Latim nos EUA e a Influência Política
 >“4 — É também inteiramente falso educadores — assim chamados porque dentro das lutas e ambições políticas ocuparam pastas de educação ou, quando muito, escreveram livros de psicologia infantil — dizerem que — estas palavras foram proferidas numa sessão da comissão de 'diretrizes e bases do ensino', comissão nomeada para cumprimento do artigo 5, inciso XV, d, da constituição federal — 'nos Estados Unidos da América, país que ninguém nega estar na vanguarda do progresso, não se estuda latim'.
@@ -40,7 +42,9 @@ Aqui está outra citação que discorre sobre a importância da interdisciplinar
 >
 >Esse 'educador' era, a esse tempo... presidente de uma seção estadual de partido político.”
 
-Nessa parte, percebemos o quanto nossa educação está aos moldes da educação estadunidense, a qual John Taylor Gatto, reconhecido professor de Nova Iorque, em seu livro “Emburrecimento Programado” provou ser falha e repleta de erros graves, os quais podem ser nitidamente observados também no ensino brasileiro. Futuramente farei um artigo especificamente sobre esse tema.
+Nessa parte, percebemos o quanto nossa educação está aos moldes da educação estadunidense, a qual John Taylor Gatto, reconhecido professor de Nova Iorque, em seu livro “Emburrecimento Programado” provou ser falha e repleta de erros graves, os quais podem ser nitidamente observados também no ensino brasileiro. 
+
+Futuramente farei um artigo especificamente sobre esse tema.
 
 ## 4. Latim, Desenvolvimento da Inteligência e a Distração Estudantil
 >“5 — Não encontra o pobre estudante brasileiro quem lhe prove ser o latim, dentre todas as disciplinas, a que mais favorece o desenvolvimento da inteligência. Talvez nem mesmo compreenda o significado de 'desenvolver a inteligência', tal a rudeza de sua mente, preocupada com outras coisas que não estudos.
@@ -49,7 +53,7 @@ Nessa parte, percebemos o quanto nossa educação está aos moldes da educação
 
 Aqui vemos outro ponto de que falo bastante, a preocupação do aluno com outras coisas que não estudos, e a morte da intelectualidade incutida nos dias atuais. Não estou dizendo que o aluno só deva pensar em estudos, ele **deve** fazer outras coisas que não estudar, essas também são fundamentais para a excelência intelectual. Porém essas não devem tomar o lugar do estudo, é importante que o estudo não seja negligenciado e nem suprimido por nenhuma dessas outras atividades. Atividades essas como revistas, bolas, celulares, e as tão superestimadas médias. 
 
-Os alunos focam somente nelas, as médias, pois com elas eles adquirem um “certificado” de que supostamente “entenderam” tal assunto e de que não é mais necessário estudá-lo. Eles tem como propósito do estudo atingirem boas notas, e não o pleno entendimento. Discorri um pouco sobre isso no meu mais recente artigo sobre a sociedade do cansaço, onde essa cultura de valorizar resultados quantitativas está sendo pregada por sujeitos de desempenho. [Clique aqui para ler](https://fariablog.com/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/)
+Os alunos focam somente nelas, as médias, pois com elas eles adquirem um “certificado” de que supostamente “entenderam” tal assunto e de que não é mais necessário estudá-lo. Eles tem como propósito do estudo atingirem boas notas, e não o pleno entendimento. Discorri um pouco sobre isso no meu mais recente artigo sobre a sociedade do cansaço, onde essa cultura de valorizar resultados quantitativos está sendo pregada por sujeitos de desempenho. [Clique aqui para ler](https://fariablog.com/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/)
 
 ## 5. Educar vs. Ensinar: O Papel do Professor
 >“Muita gente há, alheia a assuntos de educação, que se admira com ver o latim pleiteado no curso secundário, mal sabendo que ensinar não é atuar e educar não é ensinar. É ensinar dar independência de pensamento ao aluno, fazendo com que de per si progrida: o professor é guia. É educar incutir no estudante o espírito de análise, de observação, de raciocínio, capacitando-o a ir além da simples letra do texto, do simples conteúdo de um livro, incentivando-o, animando-o. No fazer do estudante de hoje o cidadão de amanhã está o trabalho educacional do professor.”
@@ -83,7 +87,9 @@ Não é o que os alunos vão fazer com o estudo, mas o que o estudo vai fazer do
 ## 10. Evitando o Eruditismo Estéril
 >“‘Para nós — são palavras do eminente educador, padre Augusto Magne — o que interessa no latim é sua literatura, sua virtude formadora do espírito. Desviar o estudo do latim para a especialização em questiúnculas de pronúncia reconstituída é desvirtuar aquela disciplina e tirar-lhe seu poder formador para recair no eruditismo balofo, pretensioso e estéril.’”
 
-Por fim, não devemos desviar o estudo para “especialização em questiúnculas de pronúncia” ou melhor dizendo, coisas superficiais. Não permita que a disciplina seja desvirtuada e o eruditismo transformado em balofo, pretensioso e estéril. Sapere aude.
+Por fim, não devemos desviar o estudo para “especialização em questiúnculas de pronúncia” ou melhor dizendo, coisas superficiais. Não permita que a disciplina seja desvirtuada e o eruditismo transformado em balofo, pretensioso e estéril. 
+
+Sapere aude.
 
 ## Bibliografia
 * Feynman, R. P. (1985). O Senhor Está Brincando, Sr. Feynman! (R. Leighton, Ed.). Editora da Universidade de Brasília
