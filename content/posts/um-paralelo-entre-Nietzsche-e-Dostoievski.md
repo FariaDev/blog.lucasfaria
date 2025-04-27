@@ -6,7 +6,7 @@ categories = ["Leitura", "Filosofia"]
 
 [cover]
   image = "https://fariablog.com/images/imagem-post2.jpg"
-  alt = "Imagem ilustrativa do post"
+  alt = "Ilustração de Friedrich Nietzsche e Fyodor Dostoevsky se encarando em perfil, representando um debate filosófico ou literário."
   caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **Grok**, desenvolvido pela **xAI**"
 +++
 

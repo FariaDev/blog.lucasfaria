@@ -6,7 +6,7 @@ categories = ["Leitura", "Neurociência"]
 
 [cover]
   image = "https://fariablog.com/images/capa-post.jpg"
-  alt = "Imagem ilustrativa do post"
+  alt = "Ilustração estilizada de um cérebro azul cercado por livros abertos flutuando em correntes de energia dourada e azul, simbolizando conhecimento e aprendizado."
   caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **DALL·E**, desenvolvido pela **OpenAI**"
 +++
 
