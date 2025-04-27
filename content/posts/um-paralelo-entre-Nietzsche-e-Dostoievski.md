@@ -10,7 +10,7 @@ categories = ["Leitura", "Filosofia"]
   caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **Grok**, desenvolvido pela **xAI**"
 +++
 
-# **Um paralelo entre Nietzsche e Dostoiévski.**
+<!-- # **Um paralelo entre Nietzsche e Dostoiévski.** -->
 
 ---
 Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras *“Crepúsculo dos ídolos”(Nietzsche)* e *“Memórias do Subsolo”(Dostoiévski)*. Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.

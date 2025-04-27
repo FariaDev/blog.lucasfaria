@@ -10,7 +10,7 @@ categories = ["Educação", "Leitura"]
   caption = "📢 Crédito da imagem: Imagem de 'O Pensador' da Wikipédia, a enciclopédia livre."
 +++
 
-# Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação
+<!-- # Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação -->
 
 ---
 Alguns dias atrás comecei a estudar latim e para isso estou usando a *Gramática Latina de Napoleão Mendes de Almeida*. Mas, ao ler o prefácio da obra, me encantei com as opiniões e justificativas do autor sobre as razões de se estudar latim e resolvi compará-las ao estudo de outros assuntos e também à educação em geral, visto que compartilhamos opiniões semelhantes.

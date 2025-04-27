@@ -10,7 +10,7 @@ categories = ["Neurociência", "Filosofia"]
   caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **GPT-4o**, desenvolvido pela **OpenAI**"
 +++
 
-# **Por que sempre estamos cansados: o diagnóstico de Han**
+<!-- # **Por que sempre estamos cansados: o diagnóstico de Han** -->
 
 ---
 Quando foi a última vez que você se sentiu exausto? Provavelmente deve ter sido recentemente, e não deve ter ocorrido apenas uma única vez nas últimas semanas. Mas, se parar para observar, todos estamos assim. Isso não aparenta ser um cansaço saudável, aquele que com um final de semana de descanso se resolve, mas sim um “cansaço infinito”, você até tenta descansar, mas não consegue.
