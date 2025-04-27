@@ -7,7 +7,7 @@ categories = ["Educação", "Leitura"]
 [cover]
   image = "https://fariablog.com/images/imagem-post4.jpg"
   alt = "Fotografia da escultura de bronze 'O Pensador' de Rodin, mostrando um homem sentado em profunda contemplação contra um céu azul."
-  caption = "📢 Crédito da imagem: Imagem de 'O Pensador' da Wikipédia, a enciclopédia livre."
+  caption = "📢 **Crédito da imagem:** Imagem de 'O Pensador' da **Wikipédia**, a enciclopédia livre."
 +++
 
 <!-- # Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação -->
