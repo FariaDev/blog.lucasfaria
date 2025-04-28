@@ -241,14 +241,14 @@
     const shareLinkedin = document.getElementById('share-linkedin');
     const shareLink = document.getElementById('share-link');
     const backToTop = document.getElementById('back-to-top');
-    const topLink = document.getElementById('top-link'); // Adicionado
+    const topLink = document.getElementById('top-link');
 
-    const pageUrl = window.location.href;
-    const pageTitle = document.title;
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
 
     if (shareTwitter) {
       shareTwitter.addEventListener('click', function() {
-        window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
+        window.open(`https://x.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
       });
     }
 
@@ -260,31 +260,50 @@
 
     if (shareLinkedin) {
       shareLinkedin.addEventListener('click', function() {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`, '_blank');
+        window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`, '_blank');
       });
     }
 
     if (shareLink) {
       shareLink.addEventListener('click', function() {
-        navigator.clipboard.writeText(pageUrl)
-          .then(() => {
-            // Mostrar mensagem de sucesso
-            const tooltip = document.createElement('div');
-            tooltip.className = 'copy-tooltip';
-            tooltip.textContent = 'Link copiado!';
-            document.body.appendChild(tooltip);
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(window.location.href)
+            .then(() => {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'copy-tooltip';
+              tooltip.textContent = 'Link copiado!';
+              document.body.appendChild(tooltip);
 
-            setTimeout(() => {
-              tooltip.classList.add('show');
-            }, 10);
-
-            setTimeout(() => {
-              tooltip.classList.remove('show');
               setTimeout(() => {
-                document.body.removeChild(tooltip);
-              }, 300);
-            }, 2000);
-          });
+                tooltip.classList.add('show');
+              }, 10);
+
+              setTimeout(() => {
+                tooltip.classList.remove('show');
+                setTimeout(() => {
+                  document.body.removeChild(tooltip);
+                }, 300);
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Erro ao copiar link:', err);
+              alert('Não foi possível copiar o link. Por favor, copie manualmente.');
+            });
+        } else {
+          // Fallback para navegadores mais antigos
+          const textArea = document.createElement('textarea');
+          textArea.value = window.location.href;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            alert('Link copiado!');
+          } catch (err) {
+            console.error('Erro ao copiar link:', err);
+            alert('Não foi possível copiar o link. Por favor, copie manualmente.');
+          }
+          document.body.removeChild(textArea);
+        }
       });
     }
 
@@ -306,7 +325,7 @@
       });
     }
 
-    if (topLink) { // Adicionado
+    if (topLink) {
       topLink.addEventListener('click', function(event) {
         event.preventDefault();
         window.scrollTo({

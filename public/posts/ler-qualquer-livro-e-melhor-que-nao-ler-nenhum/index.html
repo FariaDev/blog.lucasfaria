@@ -10,8 +10,7 @@
 <script id="dsq-count-scr" src="//fariablog.disqus.com/count.js" async></script>
 <title>Ler qualquer livro é melhor que não ler nenhum? | FariaBlog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Ler qualquer livro é melhor que não ler nenhum?
-
+<meta name="description" content="
 Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.">
 <meta name="author" content="Lucas">
 <link rel="canonical" href="http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/">
@@ -69,50 +68,325 @@ Faz certo tempo que ando percebendo uma crescente onda de influenciadores digita
 
     </style>
 </noscript>
+
+
+<style>
+#search-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+#search-modal-overlay.active {
+    display: flex;
+}
+#search-modal {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 32px 24px 24px 24px;
+    min-width: 320px;
+    max-width: 90vw;
+    width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+#search-modal.dark {
+    background: #232323;
+    color: #eee;
+}
+#close-search-modal {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+#close-search-modal:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+#search-modal.dark #close-search-modal:hover {
+    background: #292929;
+    color: #fff;
+}
+#search-modal input[type="search"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 18px;
+    outline: none;
+    background: #fafafa;
+    color: #222;
+    transition: border 0.2s;
+}
+#search-modal.dark input[type="search"] {
+    background: #2d2d2d;
+    color: #eee;
+    border: 1px solid #444;
+}
+#search-modal input[type="search"]:focus {
+    border: 1.5px solid #007bff;
+}
+#search-modal-results {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#search-modal-results li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+#search-modal-results li:last-child {
+    border-bottom: none;
+}
+#search-modal-results a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+}
+#search-modal-results li:hover {
+    background: #f5f5f5;
+}
+#search-modal.dark #search-modal-results li:hover {
+    background: #292929;
+}
+@media (max-width: 600px) {
+    #search-modal {
+        width: 95vw;
+        min-width: unset;
+        padding: 18px 6vw 18px 6vw;
+    }
+}
+#search-modal-results .search-result-item {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#search-modal-results .search-result-item.selected,
+#search-modal-results .search-result-item:hover {
+    background: #e6f0ff;
+}
+#search-modal.dark #search-modal-results .search-result-item.selected,
+#search-modal.dark #search-modal-results .search-result-item:hover {
+    background: #2a3a4d;
+}
+</style>
+<div id="search-modal-overlay">
+    <div id="search-modal">
+        <button id="close-search-modal" title="Fechar busca">&times;</button>
+        <input id="search-modal-input" type="search" placeholder="Digite para pesquisar..." autocomplete="off" maxlength="64" autofocus />
+        <ul id="search-modal-results"></ul>
+    </div>
+</div><script src="http://localhost:1313/js/custom.js" defer></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+<link rel="preload" as="fetch" href="http://localhost:1313/index.json">
+
+<style>
+@media (max-width: 500px) {
+    .menu {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .menu-item {
+        font-size: 0.85rem;
+        padding: 0 2px;
+    }
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1101;
+}
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin: 4px 0;
+    background: var(--primary, #222);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; left: 0; bottom: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 1100;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.mobile-menu.active {
+    display: flex;
+}
+.mobile-menu ul {
+    background: #fff;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    margin: 0;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+    border-radius: 0 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+}
+.mobile-menu ul li {
+    list-style: none;
+}
+.mobile-menu ul a {
+    color: #222;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 0;
+}
+#close-mobile-menu {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    z-index: 2;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none !important;
+        pointer-events: none;
+        opacity: 0;
+    }
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 18px;
+        right: 18px;
+    }
+    .nav {
+        flex-direction: row;
+        position: relative;
+    }
+}
+</style>
+
+
+<style>
+#top-loader-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color, #F76F53), #ffb74d);
+    z-index: 2000;
+    transition: width 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+    opacity: 1;
+}
+#top-loader-bar.hide {
+    opacity: 0;
+    transition: opacity 0.3s, width 0s 0.3s;
+}
+</style>
+<div id="top-loader-bar"></div>
+
+<link rel="preload" as="font" href="http://localhost:1313/fonts/Junicode.ttf" type="font/ttf" crossorigin>
+
 </head>
 
 <body class="list"><header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="FariaBlog (Alt + H)">
-                FariaBlog
-            </a>
-            <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
-                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
+    <div class="navbar-container">
+        <div class="hamburger" id="hamburger-menu" aria-label="Abrir menu" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="http://localhost:1313/posts/" class="menu-item">Posts</a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/categories/" class="menu-item">Categorias</a>
-            </li>
-            <li>
-                <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/search/" class="menu-item">Pesquisar</a>
-            </li>
-        </ul>
-    </nav>
+        <nav class="nav">
+            <div class="logo">
+                <a href="http://localhost:1313/" accesskey="h" title="FariaBlog (Alt + H)">
+                    FariaBlog
+                </a>
+                <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+            <ul id="menu" class="menu">
+                <li>
+                    <a href="http://localhost:1313/posts/" class="menu-item">Posts</a>
+                </li>
+                <li>
+                    <a href="http://localhost:1313/categories/" class="menu-item">Categorias</a>
+                </li>
+                <li>
+                    <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
+                </li>
+                <li>
+                    <a href="#" id="open-search-modal" class="menu-item">Pesquisar</a>
+                </li>
+            </ul>
+            
+            <div id="mobile-menu" class="mobile-menu">
+                <ul>
+                    <li><a href="http://localhost:1313/posts/">Posts</a></li>
+                    <li><a href="http://localhost:1313/categories/">Categorias</a></li>
+                    <li><a href="#" id="btn-newsletter-mobile">Newsletter</a></li>
+                    <li><a href="#" id="open-search-modal-mobile">Pesquisar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </header>
 
 
@@ -222,20 +496,34 @@ document.getElementById("subscribe-form").addEventListener("submit", async funct
 
 <style>
  
-.nav {
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    border-bottom: none;
+    justify-content: space-between;
+    min-height: 72px;
+    position: relative;
 }
-
+.header {
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+.nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
 .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-
 .logo a {
     font-size: 24px;
     font-weight: bold;
@@ -278,25 +566,45 @@ html:not(.dark) #sun {
 .menu {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 2.2rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .menu-item {
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     color: var(--primary);
     transition: color 0.2s;
-    padding: 0;
+    padding: 0 2px;
     border-bottom: none;
 }
-
 .menu-item:hover {
-    color: var(--primary);
-    opacity: 0.8;
+    color: var(--accent-color);
+    opacity: 1;
     border-bottom: none;
+}
+@media (max-width: 1200px) {
+    .navbar-container {
+        padding: 0 16px;
+    }
+}
+@media (max-width: 900px) {
+    .menu {
+        gap: 1.2rem;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-container {
+        min-height: 56px;
+        padding: 0 8px;
+    }
+    .nav {
+        gap: 0.5rem;
+    }
+    .menu {
+        gap: 0.7rem;
+    }
 }
 
  
@@ -330,30 +638,6 @@ html:not(.dark) #sun {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--primary);
-}
-
- 
-@media screen and (max-width: 768px) {
-    .nav {
-        flex-direction: row;
-        padding: 1rem;
-    }
-
-    .menu {
-        justify-content: flex-end;
-        gap: 1.5rem;
-    }
-
-    .menu-item {
-        padding: 0;
-        font-size: 0.8rem;
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 1rem;
-        padding: 1.5rem;
-    }
 }
 
  
@@ -594,7 +878,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     }
   </style>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="https://fariablog.com/images/capa-post.jpg" alt="Ilustração estilizada de um cérebro azul cercado por livros abertos flutuando em correntes de energia dourada e azul, simbolizando conhecimento e aprendizado.">
+<figure class="entry-cover"><img loading="eager" decoding="async" src="https://fariablog.com/images/capa-post.jpg" alt="Ilustração estilizada de um cérebro azul cercado por livros abertos flutuando em correntes de energia dourada e azul, simbolizando conhecimento e aprendizado.">
         <p>📢 <strong>Crédito da imagem:</strong> Imagem criada utilizando ferramentas de inteligência artificial, especificamente o <strong>DALL·E</strong>, desenvolvido pela <strong>OpenAI</strong></p>
 </figure>
 
@@ -605,9 +889,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         </summary>
 
         <div class="inner"><ul>
-                <li>
-                    <a href="#ler-qualquer-livro-%c3%a9-melhor-que-n%c3%a3o-ler-nenhum" aria-label="Ler qualquer livro é melhor que não ler nenhum?">Ler qualquer livro é melhor que não ler nenhum?</a><ul>
-                        
                 <li>
                     <a href="#benef%c3%adcios-gerais-da-leitura" aria-label="Benefícios Gerais da Leitura">Benefícios Gerais da Leitura</a></li>
                 <li>
@@ -623,8 +904,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
                 <li>
                     <a href="#-refer%c3%aancias-bibliogr%c3%a1ficas" aria-label="📚 Referências Bibliográficas">📚 Referências Bibliográficas</a>
                 </li>
-            </ul>
-            </li>
             </ul>
         </div>
     </details>
@@ -659,8 +938,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     margin-bottom: 30px;
 }
 </style> 
-  <div class="post-content"><h1 id="ler-qualquer-livro-é-melhor-que-não-ler-nenhum"><strong>Ler qualquer livro é melhor que não ler nenhum?</strong><a hidden class="anchor" aria-hidden="true" href="#ler-qualquer-livro-é-melhor-que-não-ler-nenhum">#</a></h1>
-<hr>
+  <div class="post-content"><hr>
 <p>Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.</p>
 <h2 id="benefícios-gerais-da-leitura"><strong>Benefícios Gerais da Leitura</strong><a hidden class="anchor" aria-hidden="true" href="#benefícios-gerais-da-leitura">#</a></h2>
 <p>Praticamente qualquer tipo de leitura já é suficiente para ativar certas regiões do cérebro, sejam elas relacionadas à linguagem, memória e até imaginação, fortalecendo conexões neurais e promovendo um mecanismo que permite que o cérebro se “auto modifique”, a neuroplasticidade (Izquierdo, 2006).</p>
@@ -750,12 +1028,33 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     this.page.identifier = 'posts\/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum.md'; 
   };
 
-  (function() { 
+  
+  function loadDisqus() {
+    if (window.disqusLoaded) return;
+    window.disqusLoaded = true;
     var d = document, s = d.createElement('script');
     s.src = 'https://fariablog.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
-  })();
+  }
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight && rect.bottom > 0
+    );
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var disqusThread = document.getElementById('disqus_thread');
+    if (!disqusThread) return;
+    function checkDisqus() {
+      if (isInViewport(disqusThread)) {
+        loadDisqus();
+        window.removeEventListener('scroll', checkDisqus);
+      }
+    }
+    window.addEventListener('scroll', checkDisqus);
+    checkDisqus();
+  });
 </script>
 <noscript>
   Por favor, habilite o JavaScript para visualizar os
@@ -806,14 +1105,14 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
     const shareLinkedin = document.getElementById('share-linkedin');
     const shareLink = document.getElementById('share-link');
     const backToTop = document.getElementById('back-to-top');
-    const topLink = document.getElementById('top-link'); 
+    const topLink = document.getElementById('top-link');
 
-    const pageUrl = window.location.href;
-    const pageTitle = document.title;
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
 
     if (shareTwitter) {
       shareTwitter.addEventListener('click', function() {
-        window.open(`https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
+        window.open(`https://x.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
       });
     }
 
@@ -825,31 +1124,50 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 
     if (shareLinkedin) {
       shareLinkedin.addEventListener('click', function() {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`, '_blank');
+        window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`, '_blank');
       });
     }
 
     if (shareLink) {
       shareLink.addEventListener('click', function() {
-        navigator.clipboard.writeText(pageUrl)
-          .then(() => {
-            
-            const tooltip = document.createElement('div');
-            tooltip.className = 'copy-tooltip';
-            tooltip.textContent = 'Link copiado!';
-            document.body.appendChild(tooltip);
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(window.location.href)
+            .then(() => {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'copy-tooltip';
+              tooltip.textContent = 'Link copiado!';
+              document.body.appendChild(tooltip);
 
-            setTimeout(() => {
-              tooltip.classList.add('show');
-            }, 10);
-
-            setTimeout(() => {
-              tooltip.classList.remove('show');
               setTimeout(() => {
-                document.body.removeChild(tooltip);
-              }, 300);
-            }, 2000);
-          });
+                tooltip.classList.add('show');
+              }, 10);
+
+              setTimeout(() => {
+                tooltip.classList.remove('show');
+                setTimeout(() => {
+                  document.body.removeChild(tooltip);
+                }, 300);
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Erro ao copiar link:', err);
+              alert('Não foi possível copiar o link. Por favor, copie manualmente.');
+            });
+        } else {
+          
+          const textArea = document.createElement('textarea');
+          textArea.value = window.location.href;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            alert('Link copiado!');
+          } catch (err) {
+            console.error('Erro ao copiar link:', err);
+            alert('Não foi possível copiar o link. Por favor, copie manualmente.');
+          }
+          document.body.removeChild(textArea);
+        }
       });
     }
 
@@ -871,7 +1189,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
       });
     }
 
-    if (topLink) { 
+    if (topLink) {
       topLink.addEventListener('click', function(event) {
         event.preventDefault();
         window.scrollTo({

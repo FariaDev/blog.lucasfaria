@@ -53,7 +53,7 @@ body.single {
 /* Estilo para o home_info, voltando ao fundo normal */
 .first-entry.home-info {
     min-height: auto;
-    margin: 60px auto 80px;
+    margin: 60px auto 24px;
     padding: 0 20px;
     font-family: 'Junicode', serif;
     text-align: center;
@@ -991,4 +991,66 @@ html.dark #translate-button {
 
 html.dark #translate-button:hover {
   background-color: #ffb0a0;
+}
+
+/* ======== Estilo dos cards de post na listagem ======== */
+.card-post {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    margin-bottom: 28px;
+    border: 1px solid #eee;
+    position: relative;
+    z-index: 1;
+}
+
+.card-post:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--accent-color, #007bff);
+}
+
+/* Para modo escuro */
+html.dark .card-post {
+    background: #232323;
+    border: 1px solid #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+html.dark .card-post:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.32);
+    border-color: var(--accent-color, #F76F53);
+}
+
+body.search-modal-open {
+    overflow: hidden;
+}
+
+.recent-post-highlight {
+    border: 2px solid var(--accent-color, #F76F53) !important;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(247, 111, 83, 0.07);
+}
+.recent-badge {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: var(--accent-color, #F76F53);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(247, 111, 83, 0.08);
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+@media (max-width: 600px) {
+    .recent-badge {
+        left: 10px;
+        top: -10px;
+        font-size: 0.8rem;
+        padding: 2px 8px;
+    }
 }

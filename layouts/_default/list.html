@@ -47,7 +47,7 @@
 
   {{- if .IsHome }}
   <!-- Botão translate após home_info e antes da lista de posts, apenas na página inicial -->
-  <div class="translate-container" style="text-align: center; margin: 10px 0;">
+  <div class="translate-container" style="text-align: center; margin: 0 0 10px 0; padding-top: 0;">
     <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
     <div id="google_translate_element" style="display: none;">
         <button id="close-translate" title="Fechar tradutor">✕</button>
@@ -124,9 +124,6 @@
     }
 
     #close-translate {
-        position: absolute;
-        top: 5px;
-        right: 5px;
         background: none;
         border: none;
         color: #666;
@@ -134,6 +131,8 @@
         font-size: 16px;
         padding: 5px;
         line-height: 1;
+        float: right;
+        margin-bottom: 5px;
     }
 
     #close-translate:hover {
@@ -141,20 +140,31 @@
     }
 
     #google_translate_element {
-        position: relative;
-        max-width: 300px;
-        overflow: hidden;
-        margin: 10px auto;
+        position: static;
+        margin: 10px auto 0 auto;
+        background: #fff;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .translate-container {
+        margin-bottom: 32px !important; /* ou um valor que achar confortável, como 36px */
     }
   </style>
   {{- end }}
 
   {{- range $index, $page := $paginator.Pages }}
-
-    <article class="post-entry">
-      <!-- Removemos o código de exibição de imagens aqui -->
-      <!-- {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
-      {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }} -->
+    <article class="post-entry card-post{{ if eq $index 0 }} recent-post-highlight{{ end }}">
+      {{ if eq $index 0 }}
+      <span class="recent-badge">Novo!</span>
+      {{ end }}
+      {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
 
       <header class="entry-header post-header-flex">
         <!-- Título do post -->

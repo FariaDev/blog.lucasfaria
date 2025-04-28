@@ -1,48 +1,64 @@
 <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ .Site.Title }} (Alt + H)">
-                {{ .Site.Title }}
-            </a>
-            
-            {{- if (not site.Params.disableThemeToggle) }}
-            <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
-                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-            {{- end }}
+    <div class="navbar-container">
+        <div class="hamburger" id="hamburger-menu" aria-label="Abrir menu" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="/posts/" class="menu-item">Posts</a>
-            </li>
-            <li>
-                <a href="/categories/" class="menu-item">Categorias</a>
-            </li>
-            <li>
-                <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
-            </li>
-            <li>
-                <a href="/search/" class="menu-item">Pesquisar</a>
-            </li>
-        </ul>
-    </nav>
+        <nav class="nav">
+            <div class="logo">
+                <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ .Site.Title }} (Alt + H)">
+                    {{ .Site.Title }}
+                </a>
+                
+                {{- if (not site.Params.disableThemeToggle) }}
+                <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                {{- end }}
+            </div>
+            <ul id="menu" class="menu">
+                <li>
+                    <a href="/posts/" class="menu-item">Posts</a>
+                </li>
+                <li>
+                    <a href="/categories/" class="menu-item">Categorias</a>
+                </li>
+                <li>
+                    <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
+                </li>
+                <li>
+                    <a href="#" id="open-search-modal" class="menu-item">Pesquisar</a>
+                </li>
+            </ul>
+            <!-- Menu mobile -->
+            <div id="mobile-menu" class="mobile-menu">
+                <ul>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/categories/">Categorias</a></li>
+                    <li><a href="#" id="btn-newsletter-mobile">Newsletter</a></li>
+                    <li><a href="#" id="open-search-modal-mobile">Pesquisar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </header>
 
 <!-- Modal Newsletter -->
@@ -54,21 +70,35 @@
 </div>
 
 <style>
-/* Estilo minimalista para o menu e botões similar à imagem de referência */
-.nav {
+/* Container centralizador da navbar */
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    border-bottom: none;
+    justify-content: space-between;
+    min-height: 72px;
+    position: relative;
 }
-
+.header {
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    margin-bottom: 0;
+}
+.nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
 .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-
 .logo a {
     font-size: 24px;
     font-weight: bold;
@@ -111,25 +141,45 @@ html:not(.dark) #sun {
 .menu {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 2.2rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .menu-item {
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     color: var(--primary);
     transition: color 0.2s;
-    padding: 0;
+    padding: 0 2px;
     border-bottom: none;
 }
-
 .menu-item:hover {
-    color: var(--primary);
-    opacity: 0.8;
+    color: var(--accent-color);
+    opacity: 1;
     border-bottom: none;
+}
+@media (max-width: 1200px) {
+    .navbar-container {
+        padding: 0 16px;
+    }
+}
+@media (max-width: 900px) {
+    .menu {
+        gap: 1.2rem;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-container {
+        min-height: 56px;
+        padding: 0 8px;
+    }
+    .nav {
+        gap: 0.5rem;
+    }
+    .menu {
+        gap: 0.7rem;
+    }
 }
 
 /* Modal */
@@ -163,30 +213,6 @@ html:not(.dark) #sun {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--primary);
-}
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .nav {
-        flex-direction: row;
-        padding: 1rem;
-    }
-
-    .menu {
-        justify-content: flex-end;
-        gap: 1.5rem;
-    }
-
-    .menu-item {
-        padding: 0;
-        font-size: 0.8rem;
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 1rem;
-        padding: 1.5rem;
-    }
 }
 
 /* Animação do modal */

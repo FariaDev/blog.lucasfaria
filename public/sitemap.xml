@@ -3,10 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-04-21T15:15:02-03:00</lastmod>
+    <lastmod>2025-04-27T15:20:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/educa%C3%A7%C3%A3o/</loc>
+    <lastmod>2025-04-27T15:20:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-04-21T15:15:02-03:00</lastmod>
+    <lastmod>2025-04-27T15:20:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/leitura/</loc>
+    <lastmod>2025-04-27T15:20:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-04-27T15:20:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/reflex%C3%B5es-sobre-o-pref%C3%A1cio-de-napole%C3%A3o-mendes-de-almeida-latim-racioc%C3%ADnio-e-a-crise-na-educa%C3%A7%C3%A3o/</loc>
+    <lastmod>2025-04-27T15:20:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/filosofia/</loc>
     <lastmod>2025-04-21T15:15:02-03:00</lastmod>
@@ -16,15 +28,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/</loc>
     <lastmod>2025-04-21T15:15:02-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-04-21T15:15:02-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/reflex%C3%B5es-sobre-o-pref%C3%A1cio-de-napole%C3%A3o-mendes-de-almeida-latim-racioc%C3%ADnio-e-a-crise-na-educa%C3%A7%C3%A3o/</loc>
-    <lastmod>2025-04-21T15:15:02-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/leitura/</loc>
-    <lastmod>2025-02-01T13:49:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/</loc>
     <lastmod>2025-02-01T13:49:00-03:00</lastmod>
