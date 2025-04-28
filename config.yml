@@ -68,7 +68,7 @@ params:
     tag: "tags"
 
   customCSS:
-    - "css/custom.css"
+    - "css/custom.css?v=1.0.1"
 
   assets:
     favicon: "https://fariablog.com/favicon.ico"
