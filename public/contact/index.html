@@ -8,11 +8,11 @@
 <html lang="pt-br">
 
 <script id="dsq-count-scr" src="//fariablog.disqus.com/count.js" async></script>
-<title>Posts | FariaBlog</title>
+<title>Contato | FariaBlog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - FariaBlog">
+<meta name="description" content="Entre em contato comigo através do formulário ou redes sociais">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="http://localhost:1313/contact/">
 <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 <noscript><link rel="stylesheet" href="http://localhost:1313/css/custom.css"></noscript>
 
@@ -29,8 +29,7 @@
 <link rel="mask-icon" href="https://fariablog.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/contact/">
 <noscript>
     <style>
         #theme-toggle,
@@ -376,7 +375,7 @@
                     <a href="#" id="open-search-modal" class="menu-item">Pesquisar</a>
                 </li>
                 <li>
-                    <a href="mailto:fariablog1@gmail.com" class="menu-item">Contato</a>
+                    <a href="http://localhost:1313/contact" class="menu-item">Contato</a>
                 </li>
             </ul>
             
@@ -386,7 +385,7 @@
                     <li><a href="http://localhost:1313/categories/">Categorias</a></li>
                     <li><a href="#" id="btn-newsletter-mobile">Newsletter</a></li>
                     <li><a href="#" id="open-search-modal-mobile">Pesquisar</a></li>
-                    <li><a href="mailto:seu-email@exemplo.com">Contato</a></li>
+                    <li><a href="http://localhost:1313/contact">Contato</a></li>
                 </ul>
             </div>
         </nav>
@@ -733,148 +732,342 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 </script>
 
-    <main class="main"> 
-  <header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
-    <h1>
-      Posts
+    <main class="main">
+
+
+<div class="reading-progress-container">
+  <div class="reading-progress-bar" id="reading-progress-bar"></div>
+</div>
+
+
+<div class="floating-share-menu">
+  <button class="share-button" title="Compartilhar no X" id="share-twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </button>
+  <button class="share-button" title="Compartilhar no Facebook" id="share-facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+  </button>
+  <button class="share-button" title="Compartilhar no LinkedIn" id="share-linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+  </button>
+  <button class="share-button" title="Copiar Link" id="share-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+  </button>
+  <button class="share-button back-to-top" title="Voltar ao topo" id="back-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+</div>
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
+
+    
+    <div class="translate-container" style="text-align: left; margin: 10px 0;">
+      <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
+      <div id="google_translate_element" style="display: none;">
+          <button id="close-translate" title="Fechar tradutor">✕</button>
+      </div>
+    </div>
+
+    <h1 class="post-title entry-hint-parent">
+      Contato
     </h1>
-  </header>
-    <article class="post-entry card-post recent-post-highlight">
-      
-      <span class="recent-badge">Novo!</span>
-       
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/imagem-post4.jpg" alt="Fotografia da escultura de bronze &#39;O Pensador&#39; de Rodin, mostrando um homem sentado em profunda contemplação contra um céu azul.">
-</figure>
+    <div class="post-description">
+      Entre em contato comigo através do formulário ou redes sociais
+    </div>
 
-      <header class="entry-header post-header-flex">
-        
-        <h2 class="entry-hint-parent">
-          <a href="http://localhost:1313/posts/reflex%C3%B5es-sobre-o-pref%C3%A1cio-de-napole%C3%A3o-mendes-de-almeida-latim-racioc%C3%ADnio-e-a-crise-na-educa%C3%A7%C3%A3o/">Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação</a>
-        </h2>
-      </header>
-
-      
-      
-      <p><strong>Categorias:</strong>
-        
-          <a href="http://localhost:1313/categories/educa%C3%A7%C3%A3o">Educação</a>
-        
-          <a href="http://localhost:1313/categories/leitura">Leitura</a>
-        
-      </p>
     
+  <div class="post-meta"><span title='2024-03-19 00:00:00 +0000 UTC'>March 19, 2024</span>
+
+</div>
+
+  <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'pt',
+            includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru', 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var translateButton = document.getElementById("translate-button");
+        var translateDiv = document.getElementById("google_translate_element");
+        var closeButton = document.getElementById("close-translate");
+
+        if (translateButton) {
+            translateButton.addEventListener("click", function() {
+                if (translateDiv.style.display === "none" || translateDiv.style.display === "") {
+                    translateDiv.style.display = "block";
+                    if (!document.getElementById("google_translate_script")) {
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+                        script.id = "google_translate_script";
+                        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+                        document.body.appendChild(script);
+                    }
+
+                    
+                    if (!document.getElementById("translate-instruction")) {
+                        var instruction = document.createElement("div");
+                        instruction.id = "translate-instruction";
+                        instruction.style.fontSize = "12px";
+                        instruction.style.marginTop = "5px";
+                        instruction.style.color = "#666";
+                        instruction.innerText = "Selecione um idioma no menu acima";
+                        translateDiv.appendChild(instruction);
+                    }
+                } else {
+                    translateDiv.style.display = "none";
+                }
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener("click", function(e) {
+                e.preventDefault();
+                translateDiv.style.display = "none";
+            });
+        }
+    });
+  </script>
+
+
+  <style>
+    #translate-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s;
+        display: inline-block;
+    }
+
+    #translate-button:hover {
+        background: #0056b3;
+    }
+
+    #close-translate {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        line-height: 1;
+    }
+
+    #close-translate:hover {
+        color: #333;
+    }
+
+    #google_translate_element {
+        position: relative;
+        max-width: 300px;
+        overflow: hidden;
+        margin: 10px 0;  
+    }
+  </style>
+  </header> 
+
+   
+  <div class="post-content"><p>Entre em contato comigo através do formulário abaixo ou pelas redes sociais. Estou sempre aberto a sugestões, dúvidas e conversas sobre os temas que escrevo.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul> 
+  </footer>
+
+<div id="disqus_thread"></div>
+<script>
+  
+  var disqus_config = function () {
+    this.page.url = 'http:\/\/localhost:1313\/contact\/'; 
+    this.page.identifier = 'contact.md'; 
+  };
+
+  
+  function loadDisqus() {
+    if (window.disqusLoaded) return;
+    window.disqusLoaded = true;
+    var d = document, s = d.createElement('script');
+    s.src = 'https://fariablog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight && rect.bottom > 0
+    );
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var disqusThread = document.getElementById('disqus_thread');
+    if (!disqusThread) return;
+    function checkDisqus() {
+      if (isInViewport(disqusThread)) {
+        loadDisqus();
+        window.removeEventListener('scroll', checkDisqus);
+      }
+    }
+    window.addEventListener('scroll', checkDisqus);
+    checkDisqus();
+  });
+</script>
+<noscript>
+  Por favor, habilite o JavaScript para visualizar os
+  <a href="https://disqus.com/?ref_noscript">comentários fornecidos pelo Disqus.</a>
+</noscript>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.getElementById('reading-progress-bar');
+    const postContent = document.querySelector('.post-content');
+
+    if (progressBar && postContent) {
+      
+      const text = postContent.textContent;
+      const wordCount = text.split(/\s+/).length;
+      const readingTime = Math.ceil(wordCount / 200); 
 
       
-      <div class="entry-content">
-        <p>
-           Alguns dias atrás comecei a estudar latim e para isso estou usando a Gramática Latina de Napoleão Mendes de Almeida. Mas, ao ler o prefácio da obra, me encantei com as opiniões e justificativas do autor sobre as razões de se estudar latim e resolvi compará-las ao estudo de outros assuntos e também à educação em geral, visto que compartilhamos opiniões semelhantes.
-Escrevi esse texto de uma forma um pouco diferente do que estou acostumado a escrever, pois meu objetivo aqui era complementar o que li e compartilhar com os leitores esse precioso conhecimento.
-...
-        </p>
-      </div>
-
-      <a class="entry-link" aria-label="post link to Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação" href="http://localhost:1313/posts/reflex%C3%B5es-sobre-o-pref%C3%A1cio-de-napole%C3%A3o-mendes-de-almeida-latim-racioc%C3%ADnio-e-a-crise-na-educa%C3%A7%C3%A3o/"></a>
-    </article>
-    <article class="post-entry card-post">
-       
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/imagem-post3.jpeg" alt="Pintura de uma pessoa segurando uma máscara sorridente enquanto seu reflexo no espelho mostra um rosto triste e chorando, ilustrando dualidade emocional.">
-</figure>
-
-      <header class="entry-header post-header-flex">
-        
-        <h2 class="entry-hint-parent">
-          <a href="http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/">Por que sempre estamos cansados: o diagnóstico de Han</a>
-        </h2>
-      </header>
+      const postHeader = document.querySelector('.post-header');
+      if (postHeader) {
+        const readingTimeDiv = document.createElement('div');
+        readingTimeDiv.className = 'reading-time';
+        readingTimeDiv.innerHTML = `Tempo de leitura: ${readingTime} min`;
+        postHeader.appendChild(readingTimeDiv);
+      }
 
       
-      
-      <p><strong>Categorias:</strong>
-        
-          <a href="http://localhost:1313/categories/neuroci%C3%AAncia">Neurociência</a>
-        
-          <a href="http://localhost:1313/categories/filosofia">Filosofia</a>
-        
-      </p>
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+
+        const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        progressBar.style.width = scrolled + '%';
+      });
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
     
+    const shareTwitter = document.getElementById('share-twitter');
+    const shareFacebook = document.getElementById('share-facebook');
+    const shareLinkedin = document.getElementById('share-linkedin');
+    const shareLink = document.getElementById('share-link');
+    const backToTop = document.getElementById('back-to-top');
+    const topLink = document.getElementById('top-link');
 
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
+
+    if (shareTwitter) {
+      shareTwitter.addEventListener('click', function() {
+        window.open(`https://x.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`, '_blank');
+      });
+    }
+
+    if (shareFacebook) {
+      shareFacebook.addEventListener('click', function() {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, '_blank');
+      });
+    }
+
+    if (shareLinkedin) {
+      shareLinkedin.addEventListener('click', function() {
+        window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`, '_blank');
+      });
+    }
+
+    if (shareLink) {
+      shareLink.addEventListener('click', function() {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(window.location.href)
+            .then(() => {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'copy-tooltip';
+              tooltip.textContent = 'Link copiado!';
+              document.body.appendChild(tooltip);
+
+              setTimeout(() => {
+                tooltip.classList.add('show');
+              }, 10);
+
+              setTimeout(() => {
+                tooltip.classList.remove('show');
+                setTimeout(() => {
+                  document.body.removeChild(tooltip);
+                }, 300);
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Erro ao copiar link:', err);
+              alert('Não foi possível copiar o link. Por favor, copie manualmente.');
+            });
+        } else {
+          
+          const textArea = document.createElement('textarea');
+          textArea.value = window.location.href;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            alert('Link copiado!');
+          } catch (err) {
+            console.error('Erro ao copiar link:', err);
+            alert('Não foi possível copiar o link. Por favor, copie manualmente.');
+          }
+          document.body.removeChild(textArea);
+        }
+      });
+    }
+
+    if (backToTop) {
       
-      <div class="entry-content">
-        <p>
-           Quando foi a última vez que você se sentiu exausto? Provavelmente deve ter sido recentemente, e não deve ter ocorrido apenas uma única vez nas últimas semanas. Mas, se parar para observar, todos estamos assim. Isso não aparenta ser um cansaço saudável, aquele que com um final de semana de descanso se resolve, mas sim um “cansaço infinito”, você até tenta descansar, mas não consegue.
-Felizmente, o filósofo e teórico cultural sul-coreano Byung-Chul Han tentou desvendar a origem dessa fadiga crônica em sua obra “Sociedade do Cansaço”. Usarei ela como base para esse artigo, mas também tentarei acrescentar alguns conceitos e insights que obtive durante a leitura de seu livro.
-...
-        </p>
-      </div>
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.style.opacity = '1';
+        } else {
+          backToTop.style.opacity = '0';
+        }
+      });
 
-      <a class="entry-link" aria-label="post link to Por que sempre estamos cansados: o diagnóstico de Han" href="http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/"></a>
-    </article>
-    <article class="post-entry card-post">
-       
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/imagem-post2.jpg" alt="Ilustração de Friedrich Nietzsche e Fyodor Dostoevsky se encarando em perfil, representando um debate filosófico ou literário.">
-</figure>
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
 
-      <header class="entry-header post-header-flex">
-        
-        <h2 class="entry-hint-parent">
-          <a href="http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/">Um paralelo entre Nietzsche e Dostoiévski.</a>
-        </h2>
-      </header>
-
-      
-      
-      <p><strong>Categorias:</strong>
-        
-          <a href="http://localhost:1313/categories/leitura">Leitura</a>
-        
-          <a href="http://localhost:1313/categories/filosofia">Filosofia</a>
-        
-      </p>
-    
-
-      
-      <div class="entry-content">
-        <p>
-           Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras “Crepúsculo dos ídolos”(Nietzsche) e “Memórias do Subsolo”(Dostoiévski). Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.
-...
-        </p>
-      </div>
-
-      <a class="entry-link" aria-label="post link to Um paralelo entre Nietzsche e Dostoiévski." href="http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/"></a>
-    </article>
-    <article class="post-entry card-post">
-       
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/capa-post.jpg" alt="Ilustração estilizada de um cérebro azul cercado por livros abertos flutuando em correntes de energia dourada e azul, simbolizando conhecimento e aprendizado.">
-</figure>
-
-      <header class="entry-header post-header-flex">
-        
-        <h2 class="entry-hint-parent">
-          <a href="http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/">Ler qualquer livro é melhor que não ler nenhum?</a>
-        </h2>
-      </header>
-
-      
-      
-      <p><strong>Categorias:</strong>
-        
-          <a href="http://localhost:1313/categories/leitura">Leitura</a>
-        
-          <a href="http://localhost:1313/categories/neuroci%C3%AAncia">Neurociência</a>
-        
-      </p>
-    
-
-      
-      <div class="entry-content">
-        <p>
-           Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.
-...
-        </p>
-      </div>
-
-      <a class="entry-link" aria-label="post link to Ler qualquer livro é melhor que não ler nenhum?" href="http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/"></a>
-    </article>
+    if (topLink) {
+      topLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
     </main>
     
 <footer class="footer">

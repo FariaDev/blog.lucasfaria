@@ -87,6 +87,9 @@ menu:
     - name: Search
       url: /search/
       weight: 40
+    - name: Contato
+      url: "mailto:fariablog1@gmail.com"
+      weight: 50
 
 buildDrafts: false
 
