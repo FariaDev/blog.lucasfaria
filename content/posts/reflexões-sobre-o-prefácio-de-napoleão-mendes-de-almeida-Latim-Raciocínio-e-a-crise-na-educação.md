@@ -5,7 +5,7 @@ author = "Lucas"
 categories = ["Educação", "Leitura"]
 
 [cover]
-  image = "https://fariablog.com/images/imagem-post4.jpg"
+  image = "https://fariablog.com/images/imagem-post4.webp"
   alt = "Fotografia da escultura de bronze 'O Pensador' de Rodin, mostrando um homem sentado em profunda contemplação contra um céu azul."
   caption = "📢 **Crédito da imagem:** Imagem de 'O Pensador' da **Wikipédia**, a enciclopédia livre."
 +++

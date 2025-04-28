@@ -5,7 +5,7 @@ author = "Lucas"
 categories = ["Neurociência", "Filosofia"]
 
 [cover]
-  image = "https://fariablog.com/images/imagem-post3.jpeg"
+  image = "https://fariablog.com/images/imagem-post3.webp"
   alt = "Pintura de uma pessoa segurando uma máscara sorridente enquanto seu reflexo no espelho mostra um rosto triste e chorando, ilustrando dualidade emocional."
   caption = "📢 **Crédito da imagem:** Imagem criada utilizando ferramentas de inteligência artificial, especificamente o **GPT-4o**, desenvolvido pela **OpenAI**"
 +++
