@@ -42,9 +42,6 @@
                     <a href="/categories/" class="menu-item">Categorias</a>
                 </li>
                 <li>
-                    <a href="#" id="btn-newsletter" class="menu-item">Newsletter</a>
-                </li>
-                <li>
                     <a href="#" id="open-search-modal" class="menu-item">Pesquisar</a>
                 </li>
                 <li>
@@ -56,7 +53,6 @@
                 <ul>
                     <li><a href="/posts/">Posts</a></li>
                     <li><a href="/categories/">Categorias</a></li>
-                    <li><a href="#" id="btn-newsletter-mobile">Newsletter</a></li>
                     <li><a href="#" id="open-search-modal-mobile">Pesquisar</a></li>
                     <li><a href="mailto:fariablog1@gmail.com">Contato</a></li>
                 </ul>
@@ -64,14 +60,6 @@
         </nav>
     </div>
 </header>
-
-<!-- Modal Newsletter -->
-<div id="newsletter-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        {{ partial "subscribe.html" . }}
-    </div>
-</div>
 
 <style>
 /* Container centralizador da navbar */
@@ -185,87 +173,12 @@ html:not(.dark) #sun {
         gap: 0.7rem;
     }
 }
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: var(--theme);
-    padding: 2rem;
-    border-radius: 8px;
-    position: relative;
-    width: 90%;
-    max-width: 500px;
-    margin: 2rem auto;
-}
-
-.close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--primary);
-}
-
-/* Animação do modal */
-.modal.show {
-    display: flex;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 </style>
 
 <script>
-const modal = document.getElementById('newsletter-modal');
-const btn = document.getElementById('btn-newsletter');
-const closeBtn = document.querySelector('.close');
-
-btn.addEventListener('click', function(e) {
-    e.preventDefault();
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-});
-
-closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-window.addEventListener('click', function(e) {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.style.display === 'flex') {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Script para o botão de alternar tema
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
-// Função para definir o tema
 function setTheme(theme) {
     if (theme === 'dark') {
         htmlElement.classList.add('dark');
