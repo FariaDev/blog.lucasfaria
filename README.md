@@ -68,13 +68,6 @@ O arquivo `config.yml` centraliza todas as configurações do site, permitindo a
 -   Links para redes sociais
 -   Configurações do sistema de comentários
 
-## 🎯 Roadmap
-
--   [ ] Implementação de um sistema de newsletter.
--   [ ] Melhorias na interface de busca.
--   [ ] Otimizações contínuas de performance e acessibilidade.
--   [ ] Expansão dos recursos de personalização.
-
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas! Para bugs ou sugestões, por favor, abra uma [issue](https://github.com/FariaDev/blog.lucasfaria/issues). Para adicionar funcionalidades, sinta-se à vontade para enviar um [pull request](https://github.com/FariaDev/blog.lucasfaria/pulls).
