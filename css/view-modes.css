@@ -1,0 +1,90 @@
+/* Controles de visualização */
+.view-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.view-controls button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.view-controls button:hover {
+    background: #f0f0f0;
+}
+
+.view-controls button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Modo Lista (padrão) */
+.post-entries.view-list .post-entry {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+/* Modo Grid */
+.post-entries.view-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.post-entries.view-grid .post-entry {
+    margin-bottom: 0;
+}
+
+/* Modo Compacto */
+.post-entries.view-compact .post-entry {
+    margin-bottom: 1rem;
+}
+
+.post-entries.view-compact .post-entry .entry-cover {
+    display: none;
+}
+
+.post-entries.view-compact .post-entry .entry-header {
+    margin-bottom: 0;
+}
+
+.post-entries.view-list .post-entry,
+.post-entries.view-compact .post-entry {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.post-entries.view-list .post-entry:last-child,
+.post-entries.view-compact .post-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .post-entries.view-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Expande o <main> quando o grid está ativo */
+@media (min-width: 900px) {
+  .main:has(.post-entries.view-grid) {
+    max-width: 98vw !important;
+    width: 100vw !important;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .post-entries.view-grid {
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  }
+} 
