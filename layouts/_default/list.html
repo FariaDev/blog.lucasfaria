@@ -45,155 +45,52 @@
     {{- partial "home_info.html" . }}
   {{- end }}
 
-  {{- if .IsHome }}
-  <!-- Botão translate após home_info e antes da lista de posts, apenas na página inicial -->
-  <div class="translate-container" style="text-align: center; margin: 0 0 10px 0; padding-top: 0;">
-    <button id="translate-button" title="Traduzir esta página para outro idioma">🌎 Translate</button>
-    <div id="google_translate_element" style="display: none;">
-        <button id="close-translate" title="Fechar tradutor">✕</button>
-    </div>
+  <div class="post-entries view-list">
+    {{- range $index, $page := $paginator.Pages }}
+      <article class="post-entry card-post{{ if eq $index 0 }} recent-post-highlight{{ end }}">
+        {{ if eq $index 0 }}
+        <span class="recent-badge">Novo!</span>
+        {{ end }}
+        {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
+        {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
+
+        <header class="entry-header post-header-flex">
+          <h2 class="entry-hint-parent">
+            <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+          </h2>
+        </header>
+
+        <p class="post-meta">
+          <span class="post-date">
+            {{ $page.Date.Format "02/01/2006" }}
+          </span>
+          <span class="post-categories">
+            {{ if .Params.categories }}
+              •
+              {{ range .Params.categories }}
+                <a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+              {{ end }}
+            {{ end }}
+          </span>
+        </p>
+
+        {{- if (ne ($page.Param "hideSummary") true) }}
+        <div class="entry-content">
+          <p>
+            {{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}
+          </p>
+        </div>
+        {{- end }}
+
+        <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
+      </article>
+    {{- end }}
   </div>
 
-  <script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'pt',
-            includedLanguages: 'en,es,fr,de,it,ja,zh-CN,ru', // Limita aos idiomas mais comuns
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var translateButton = document.getElementById("translate-button");
-        var translateDiv = document.getElementById("google_translate_element");
-        var closeButton = document.getElementById("close-translate");
-
-        if (translateButton) {
-            translateButton.addEventListener("click", function() {
-                if (translateDiv.style.display === "none" || translateDiv.style.display === "") {
-                    translateDiv.style.display = "block";
-                    if (!document.getElementById("google_translate_script")) {
-                        var script = document.createElement("script");
-                        script.type = "text/javascript";
-                        script.id = "google_translate_script";
-                        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-                        document.body.appendChild(script);
-                    }
-
-                    // Adicionar texto de instrução
-                    if (!document.getElementById("translate-instruction")) {
-                        var instruction = document.createElement("div");
-                        instruction.id = "translate-instruction";
-                        instruction.style.fontSize = "12px";
-                        instruction.style.marginTop = "5px";
-                        instruction.style.color = "#666";
-                        instruction.innerText = "Selecione um idioma no menu acima";
-                        translateDiv.appendChild(instruction);
-                    }
-                } else {
-                    translateDiv.style.display = "none";
-                }
-            });
-        }
-
-        if (closeButton) {
-            closeButton.addEventListener("click", function(e) {
-                e.preventDefault();
-                translateDiv.style.display = "none";
-            });
-        }
-    });
-  </script>
-
-
-  <style>
-    #translate-button {
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        font-size: 14px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s;
-        display: inline-block;
-    }
-
-    #translate-button:hover {
-        background: #0056b3;
-    }
-
-    #close-translate {
-        background: none;
-        border: none;
-        color: #666;
-        cursor: pointer;
-        font-size: 16px;
-        padding: 5px;
-        line-height: 1;
-        float: right;
-        margin-bottom: 5px;
-    }
-
-    #close-translate:hover {
-        color: #333;
-    }
-
-    #google_translate_element {
-        position: static;
-        margin: 10px auto 0 auto;
-        background: #fff;
-        padding: 8px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .translate-container {
-        margin-bottom: 32px !important; /* ou um valor que achar confortável, como 36px */
-    }
-  </style>
-  {{- end }}
-
-  {{- range $index, $page := $paginator.Pages }}
-    <article class="post-entry card-post{{ if eq $index 0 }} recent-post-highlight{{ end }}">
-      {{ if eq $index 0 }}
-      <span class="recent-badge">Novo!</span>
-      {{ end }}
-      {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
-      {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
-
-      <header class="entry-header post-header-flex">
-        <!-- Título do post -->
-        <h2 class="entry-hint-parent">
-          <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
-        </h2>
-      </header>
-
-      <!-- Categorias abaixo do título/upvote -->
-      {{ if .Params.categories }}
-      <p><strong>Categorias:</strong>
-        {{ range .Params.categories }}
-          <a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-      </p>
-    {{ end }}
-
-      <!-- Resumo do post -->
-      {{- if (ne ($page.Param "hideSummary") true) }}
-      <div class="entry-content">
-        <p>
-          {{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}
-        </p>
-      </div>
-      {{- end }}
-
-      <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
-    </article>
-  {{- end }}
+  <!-- Scripts necessários -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="{{ "css/view-modes.css" | absURL }}">
+  <script src="{{ "js/view-modes.js" | absURL }}" defer></script>
 
   {{- if gt $paginator.TotalPages 1 }}
     <footer class="page-footer">
@@ -204,7 +101,6 @@
         </a>
         {{- end }}
 
-        <!-- Exibir os números de página -->
         <div class="page-numbers">
           {{- $ellipsed := false -}}
           {{- $shouldEllipse := false -}}
@@ -236,47 +132,7 @@
         {{- end }}
       </nav>
     </footer>
-
-    <style>
-      .pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 2rem 0;
-        gap: 0.5rem;
-      }
-
-      .prev, .next, .page-number {
-        padding: 0.5rem 1rem;
-        background-color: #f8f9fa;
-        color: var(--primary);
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background-color 0.2s;
-      }
-
-      .prev:hover, .next:hover, .page-number:hover {
-        background-color: #e9ecef;
-      }
-
-      .page-number.current {
-        background-color: var(--primary);
-        color: white;
-      }
-
-      .page-numbers {
-        display: flex;
-        gap: 0.5rem;
-      }
-
-      .page-ellipsis {
-        display: flex;
-        align-items: center;
-        padding: 0 0.5rem;
-      }
-    </style>
   {{- end }}
 
-{{- end }}
-
 {{- end }}{{/* end profileMode */}}
+{{- end }}{{/* end main */}}

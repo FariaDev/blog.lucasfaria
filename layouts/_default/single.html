@@ -1,4 +1,4 @@
-{{- define "main" }}
+{{ define "main" }}
 
 <!-- Barra de progresso de leitura -->
 <div class="reading-progress-container">
@@ -123,7 +123,7 @@
 
   <style>
     #translate-button {
-        background: #007bff;
+        background: var(--accent-color);
         color: white;
         border: none;
         padding: 8px 15px;
@@ -135,7 +135,7 @@
     }
 
     #translate-button:hover {
-        background: #0056b3;
+        background: #d84e34; /* Versão mais escura do accent-color */
     }
 
     #close-translate {
@@ -337,4 +337,4 @@
   });
 </script>
 
-{{- end }}{{/* end main */}}
+{{ end }}

@@ -8,31 +8,9 @@
         <nav class="nav">
             <div class="logo">
                 <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ .Site.Title }} (Alt + H)">
+                    <img src="/favicon-removebg.png" alt="Logo" class="navbar-logo" style="height: 1.5em; vertical-align: middle; margin-right: 0.5em;">
                     {{ .Site.Title }}
                 </a>
-                
-                {{- if (not site.Params.disableThemeToggle) }}
-                <button id="theme-toggle" accesskey="t" title="Alternar Tema (Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                {{- end }}
             </div>
             <ul id="menu" class="menu">
                 <li>
@@ -48,6 +26,84 @@
                     <a href="mailto:fariablog1@gmail.com" class="menu-item">Contato</a>
                 </li>
             </ul>
+            <!-- Botão de tema separado, à direita -->
+            {{- if (not site.Params.disableThemeToggle) }}
+            <div style="margin-left: 2rem; display: flex; align-items: center; gap: 1rem;">
+                <!-- Botão de configurações -->
+                <button id="settings-toggle" title="Configurações" style="background: none; border: none; cursor: pointer; display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
+                        <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l-.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>
+                    </svg>
+                </button>
+                <div id="settings-overlay" class="settings-overlay">
+                    <div id="settings-dropdown" class="settings-dropdown">
+                        <h2><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
+                            <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l-.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>
+                        </svg> Configurações de Leitura</h2>
+                        <div class="beta-warning">
+                            <strong>Aviso:</strong> Este menu está em fase de testes. Em caso de problemas com o tema, tente atualizar a página (PC: F5, Mobile: puxe para baixo).
+                        </div>
+                        <div class="settings-section">
+                            <label>Tema</label>
+                            <div class="theme-toggle-group">
+                                <button class="theme-btn" id="theme-light-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> Claro</button>
+                                <button class="theme-btn" id="theme-dark-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> Escuro</button>
+                            </div>
+                        </div>
+                        {{ if eq .Kind "page" }}
+                        <div class="settings-section">
+                            <label for="font-family-select">Família da Fonte</label>
+                            <select id="font-family-select">
+                                <option value="serif">Serif (Merriweather, Georgia)</option>
+                                <option value="sans-serif">Sans-serif (Inter, Arial)</option>
+                                <option value="opendyslexic">OpenDyslexic</option>
+                                <option value="comic-sans">Comic Sans</option>
+                            </select>
+                            <div class="accessibility-tip"><strong>Dica de Acessibilidade:</strong> As fontes OpenDyslexic e Comic Sans são especialmente úteis para pessoas com dislexia, pois possuem características que facilitam a leitura.</div>
+                        </div>
+                        <div class="settings-section">
+                            <label for="font-size-slider">Tamanho da Fonte</label>
+                            <input type="range" id="font-size-slider" min="14" max="28" step="1">
+                            <div class="slider-labels"><span>Pequeno (14px)</span><span id="font-size-value">18px</span><span>Grande (28px)</span></div>
+                        </div>
+                        <div class="settings-section">
+                            <label for="line-height-slider">Altura da Linha</label>
+                            <input type="range" id="line-height-slider" min="1.2" max="2.5" step="0.1">
+                            <div class="slider-labels"><span>Compacto (1.2)</span><span id="line-height-value">1.7</span><span>Espaçado (2.5)</span></div>
+                        </div>
+                        <div class="settings-section">
+                            <label>Prévia</label>
+                            <div class="preview-box" id="preview-box">
+                                A leitura é para a mente o que o exercício é para o corpo. Assim como o exercício físico fortalece o corpo, a leitura expande a mente, aguça o intelecto e enriquece a alma. Mergulhar em diferentes mundos e perspectivas através dos livros nos permite crescer e compreender melhor a nós mesmos e o universo ao nosso redor.
+                            </div>
+                        </div>
+                        <div class="settings-section">
+                            <button id="reset-reading-prefs" class="theme-btn" style="width: 100%; text-align: center;">Restaurar Padrão</button>
+                        </div>
+                        {{ end }}
+                        {{ if ne .Kind "page" }}
+                        <div class="settings-section">
+                            <label>Visualização</label>
+                            <div class="theme-toggle-group">
+                                <button class="theme-btn" data-view="list">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                    Lista
+                                </button>
+                                <button class="theme-btn" data-view="grid">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                    Grid
+                                </button>
+                                <button class="theme-btn" data-view="compact">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
+                                    Compacta
+                                </button>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            {{- end }}
             <!-- Menu mobile -->
             <div id="mobile-menu" class="mobile-menu">
                 <ul>
@@ -55,6 +111,9 @@
                     <li><a href="/categories/">Categorias</a></li>
                     <li><a href="#" id="open-search-modal-mobile">Pesquisar</a></li>
                     <li><a href="mailto:fariablog1@gmail.com">Contato</a></li>
+                    {{- if (not site.Params.disableThemeToggle) }}
+                    <li><a href="#" id="open-settings-modal-mobile">Configurações</a></li>
+                    {{- end }}
                 </ul>
             </div>
         </nav>
@@ -73,6 +132,25 @@
     min-height: 72px;
     position: relative;
 }
+
+/* Beta Warning */
+.beta-warning {
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+html.dark .beta-warning {
+    background-color: #2d2a1e;
+    color: #ffd700;
+    border-color: #4d4a3e;
+}
+
 .header {
     background: transparent;
     box-shadow: none;
@@ -172,14 +250,244 @@ html:not(.dark) #sun {
     .menu {
         gap: 0.7rem;
     }
+    #settings-toggle {
+        display: none !important;
+    }
+}
+
+/* Estilos para o logo da navbar em modo escuro */
+.navbar-logo {
+    transition: filter 0.2s;
+}
+html.dark .navbar-logo {
+    filter: invert(1) brightness(1.2) contrast(1.1);
+}
+
+/* Estilos para a sobreposição de configurações */
+.settings-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.18);
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.settings-overlay.active {
+    display: flex;
+}
+.settings-dropdown {
+    position: relative !important;
+    top: unset !important;
+    right: unset !important;
+    left: unset !important;
+    margin: 0 auto;
+    background: #fff;
+    color: #222;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    min-width: 320px !important;
+    max-width: 80vw;
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    border: none !important;
+    font-family: inherit;
+    z-index: 9999;
+    animation: fadeInScale 0.2s;
+}
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 600px) {
+    .settings-dropdown {
+        width: 98vw;
+        padding: 1.5rem 1rem;
+    }
+}
+.settings-dropdown h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.settings-dropdown .settings-section {
+    margin-bottom: 1.5rem;
+}
+.settings-dropdown .theme-toggle-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+.settings-dropdown .theme-btn {
+    flex: 1;
+    padding: 0.7rem 0;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    cursor: pointer;
+}
+.settings-dropdown .theme-btn.active, .settings-dropdown .theme-btn:focus {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
+html.dark .settings-dropdown .theme-btn.active, html.dark .settings-dropdown .theme-btn:focus {
+    background: #fff;
+    color: #232323;
+    border-color: #fff;
+}
+.settings-dropdown label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+.settings-dropdown select, .settings-dropdown input[type=range] {
+    width: 100%;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: #fafafa;
+    color: inherit;
+}
+html.dark .settings-dropdown select, html.dark .settings-dropdown input[type=range] {
+    background: #232323;
+    border-color: #444;
+    color: #eee;
+}
+.settings-dropdown .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #888;
+    margin-top: -0.2rem;
+    margin-bottom: 0.5rem;
+}
+.settings-dropdown .accessibility-tip {
+    background: #e3f0ff;
+    color: #1a3a5d;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+html.dark .settings-dropdown .accessibility-tip {
+    background: #2a3a4d;
+    color: #b3d1ff;
+}
+.settings-dropdown .preview-box {
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: inherit;
+    border: 1px solid #eee;
+}
+html.dark .settings-dropdown .preview-box {
+    background: #232323;
+    border-color: #444;
+    color: #eee;
+}
+
+/* Estilos para usar as variáveis de preferência de leitura */
+.post-content {
+    font-family: var(--user-font-family, 'Merriweather, Georgia, serif'); /* Fallback para fonte padrão */
+    font-size: var(--user-font-size, 18px); /* Fallback para tamanho padrão */
+    line-height: var(--user-line-height, 1.7); /* Fallback para altura da linha padrão */
+}
+
+.theme-btn {
+    flex: 1;
+    padding: 0.7rem 0;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    background: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    cursor: pointer;
+}
+
+.theme-btn.active[data-view] {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .settings-view-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para as opções de visualização ativas */
+.theme-btn.active[data-view] {
+    background-color: var(--primary);
+    color: #fff;
 }
 </style>
 
-<script>
-const themeToggle = document.getElementById("theme-toggle");
-const htmlElement = document.documentElement;
+<div id="settings-overlay" class="settings-overlay">
+    <div id="settings-dropdown" class="settings-dropdown">
+        <!-- ...conteúdo do menu... -->
+    </div>
+</div>
 
+<script>
+// Abrir/fechar menu centralizado
+const settingsToggle = document.getElementById("settings-toggle");
+const settingsOverlay = document.getElementById("settings-overlay");
+const settingsDropdown = document.getElementById("settings-dropdown");
+// Remover o listener antigo do themeToggle se ele existir
+// if (themeToggle) themeToggle.removeEventListener("click", setTheme);
+
+settingsToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    settingsOverlay.classList.add("active");
+    // Ocultar o overflow do body para evitar scroll duplo
+    document.body.style.overflow = 'hidden';
+});
+settingsOverlay?.addEventListener("click", (e) => {
+    if (e.target === settingsOverlay) {
+        settingsOverlay.classList.remove("active");
+        // Restaurar o overflow do body
+        document.body.style.overflow = '';
+    }
+});
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        settingsOverlay.classList.remove("active");
+        // Restaurar o overflow do body
+        document.body.style.overflow = '';
+    }
+});
+
+// Tema (agora dentro do menu)
+const themeLightBtn = document.getElementById('theme-light-btn');
+const themeDarkBtn = document.getElementById('theme-dark-btn');
 function setTheme(theme) {
+    const htmlElement = document.documentElement;
     if (theme === 'dark') {
         htmlElement.classList.add('dark');
         localStorage.setItem("pref-theme", 'dark');
@@ -187,36 +495,167 @@ function setTheme(theme) {
         htmlElement.classList.remove('dark');
         localStorage.setItem("pref-theme", 'light');
     }
+    updateThemeButtons(theme);
 }
-
-// Evento de clique no botão
-themeToggle?.addEventListener("click", () => {
-    const isDark = htmlElement.classList.contains('dark');
-    setTheme(isDark ? 'light' : 'dark');
-});
-
-// Verifica o tema preferido ao carregar a página
+function updateThemeButtons(currentTheme) {
+    if (currentTheme === 'dark') {
+        themeDarkBtn.classList.add('active');
+        themeLightBtn.classList.remove('active');
+    } else {
+        themeLightBtn.classList.add('active');
+        themeDarkBtn.classList.remove('active');
+    }
+}
+themeLightBtn?.addEventListener('click', () => setTheme('light'));
+themeDarkBtn?.addEventListener('click', () => setTheme('dark'));
+// Inicialização do tema
 (() => {
     const savedTheme = localStorage.getItem("pref-theme");
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        setTheme(prefersDark ? 'dark' : 'light');
-    }
-    
-    // Torna o botão visível após definir o tema inicial
-    if (themeToggle) {
-        themeToggle.style.display = 'inline-block';
-    }
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    setTheme(initialTheme);
 })();
-
-// Atualiza o tema quando a preferência do sistema mudar
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     const savedTheme = localStorage.getItem("pref-theme");
-    if (!savedTheme) {
-        setTheme(e.matches ? 'dark' : 'light');
+    if (!savedTheme) setTheme(e.matches ? 'dark' : 'light');
+});
+
+// Família da fonte
+const fontFamilySelect = document.getElementById('font-family-select');
+const previewBox = document.getElementById('preview-box');
+function setFontFamily(family) {
+    let font;
+    switch(family) {
+        case 'serif': font = 'Merriweather, Georgia, serif'; break;
+        case 'sans-serif': font = 'Inter, Arial, sans-serif'; break;
+        case 'opendyslexic': font = '"OpenDyslexic", Arial, sans-serif'; break; // Fontes com espaço precisam de aspas
+        case 'comic-sans': font = '"Comic Sans MS", Comic Sans, Arial, sans-serif'; break; // Fontes com espaço precisam de aspas
+        default: font = 'Merriweather, Georgia, serif';
     }
+    document.documentElement.style.setProperty('--user-font-family', font);
+    if (previewBox) previewBox.style.fontFamily = font;
+    localStorage.setItem('pref-font-family', family);
+}
+fontFamilySelect?.addEventListener('change', e => setFontFamily(e.target.value));
+// Inicialização da fonte
+(() => {
+    const savedFamily = localStorage.getItem('pref-font-family') || 'serif';
+    if (fontFamilySelect) fontFamilySelect.value = savedFamily;
+    setFontFamily(savedFamily);
+})();
+
+// Tamanho da fonte
+const fontSizeSlider = document.getElementById('font-size-slider');
+const fontSizeValue = document.getElementById('font-size-value');
+function setFontSize(size) {
+    document.documentElement.style.setProperty('--user-font-size', size + 'px');
+    if (previewBox) previewBox.style.fontSize = size + 'px';
+    if (fontSizeValue) fontSizeValue.textContent = size + 'px';
+    localStorage.setItem('pref-font-size', size);
+}
+fontSizeSlider?.addEventListener('input', e => setFontSize(e.target.value));
+(() => {
+    const savedSize = localStorage.getItem('pref-font-size') || 18;
+    if (fontSizeSlider) fontSizeSlider.value = savedSize;
+    setFontSize(savedSize);
+})();
+
+// Altura da linha
+const lineHeightSlider = document.getElementById('line-height-slider');
+const lineHeightValue = document.getElementById('line-height-value');
+function setLineHeight(val) {
+    document.documentElement.style.setProperty('--user-line-height', val);
+    if (previewBox) previewBox.style.lineHeight = val;
+    if (lineHeightValue) lineHeightValue.textContent = val;
+    localStorage.setItem('pref-line-height', val);
+}
+lineHeightSlider?.addEventListener('input', e => setLineHeight(e.target.value));
+(() => {
+    const savedLH = localStorage.getItem('pref-line-height') || 1.7;
+    if (lineHeightSlider) lineHeightSlider.value = savedLH;
+    setLineHeight(savedLH);
+})();
+
+// Restaurar Padrão
+const resetReadingPrefsBtn = document.getElementById('reset-reading-prefs');
+resetReadingPrefsBtn?.addEventListener('click', () => {
+    localStorage.removeItem('pref-font-family');
+    localStorage.removeItem('pref-font-size');
+    localStorage.removeItem('pref-line-height');
+
+    // Aplicar valores padrão
+    const defaultFont = 'serif';
+    const defaultSize = 18;
+    const defaultLH = 1.7;
+
+    setFontFamily(defaultFont);
+    setFontSize(defaultSize);
+    setLineHeight(defaultLH);
+
+    // Resetar UI do menu
+    if (fontFamilySelect) fontFamilySelect.value = defaultFont;
+    if (fontSizeSlider) fontSizeSlider.value = defaultSize;
+    if (lineHeightSlider) lineHeightSlider.value = defaultLH;
+    if (fontSizeValue) fontSizeValue.textContent = defaultSize + 'px';
+    if (lineHeightValue) lineHeightValue.textContent = defaultLH;
+
+    // Fechar menu (opcional, mas boa UX)
+    settingsOverlay.classList.remove("active");
+    document.body.style.overflow = '';
+});
+
+// Event Listeners para botões de visualização
+const settingsViewBtns = settingsDropdown?.querySelectorAll(".theme-btn[data-view]");
+function applyView(view) {
+    const postEntries = document.querySelector('.post-entries');
+    if (!postEntries) return;
+    postEntries.classList.remove('view-list', 'view-grid', 'view-compact');
+    postEntries.classList.add(`view-${view}`);
+    localStorage.setItem('preferredView', view);
+    // Atualizar botões de visualização ativos
+    settingsViewBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === view);
+    });
+}
+settingsViewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        applyView(btn.dataset.view);
+        settingsOverlay.classList.remove("active"); // Fecha menu
+        document.body.style.overflow = ''; // Restaurar overflow
+    });
+});
+// Carregar preferência de visualização ao carregar página (apenas em list pages)
+window.addEventListener('DOMContentLoaded', () => {
+    const postEntries = document.querySelector('.post-entries');
+    if (postEntries) { // Só executa em páginas que têm .post-entries (list pages)
+        const savedView = localStorage.getItem('preferredView') || 'list';
+        applyView(savedView);
+    }
+});
+
+// Sincronizar botões de tema com o estado atual ao abrir o menu
+settingsToggle?.addEventListener("click", () => {
+    const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    updateThemeButtons(currentTheme);
+});
+
+const openSettingsModalMobile = document.getElementById("open-settings-modal-mobile");
+
+// Event listeners para abrir o menu de configurações
+settingsToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    settingsOverlay.classList.add("active");
+    document.body.style.overflow = 'hidden';
+});
+
+openSettingsModalMobile?.addEventListener("click", (e) => {
+    e.preventDefault(); // Previne o comportamento padrão do link
+    settingsOverlay.classList.add("active");
+    document.body.style.overflow = 'hidden';
+    // Fechar o menu mobile após abrir as configurações (opcional, mas comum)
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenu) mobileMenu.classList.remove("active"); // Assumindo que o menu mobile tem uma classe 'active'
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    if (hamburgerMenu) hamburgerMenu.classList.remove("active"); // Remover a classe 'active' do ícone hamburger também
 });
 </script>
