@@ -8,11 +8,11 @@
 <html lang="pt-br">
 
 <script id="dsq-count-scr" src="//fariablog.disqus.com/count.js" async></script>
-<title>Posts | FariaBlog</title>
+<title>Meus Livros Lidos | FariaBlog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - FariaBlog">
+<meta name="description" content="Aqui está a lista de livros que li, exportada do Skoob.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="http://localhost:1313/books/">
 <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
 <noscript><link rel="stylesheet" href="http://localhost:1313/css/custom.css"></noscript>
 
@@ -27,8 +27,7 @@
 <link rel="mask-icon" href="https://fariablog.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/books/">
 <noscript>
     <style>
         #theme-toggle,
@@ -382,24 +381,36 @@
                             </div>
                         </div>
                         
-                        
                         <div class="settings-section">
-                            <label>Visualização</label>
-                            <div class="theme-toggle-group">
-                                <button class="theme-btn" data-view="list">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                                    Lista
-                                </button>
-                                <button class="theme-btn" data-view="grid">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                    Grid
-                                </button>
-                                <button class="theme-btn" data-view="compact">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
-                                    Compacta
-                                </button>
+                            <label for="font-family-select">Família da Fonte</label>
+                            <select id="font-family-select">
+                                <option value="serif">Serif (Merriweather, Georgia)</option>
+                                <option value="sans-serif">Sans-serif (Inter, Arial)</option>
+                                <option value="opendyslexic">OpenDyslexic</option>
+                                <option value="comic-sans">Comic Sans</option>
+                            </select>
+                            <div class="accessibility-tip"><strong>Dica de Acessibilidade:</strong> As fontes OpenDyslexic e Comic Sans são especialmente úteis para pessoas com dislexia, pois possuem características que facilitam a leitura.</div>
+                        </div>
+                        <div class="settings-section">
+                            <label for="font-size-slider">Tamanho da Fonte</label>
+                            <input type="range" id="font-size-slider" min="14" max="28" step="1">
+                            <div class="slider-labels"><span>Pequeno (14px)</span><span id="font-size-value">18px</span><span>Grande (28px)</span></div>
+                        </div>
+                        <div class="settings-section">
+                            <label for="line-height-slider">Altura da Linha</label>
+                            <input type="range" id="line-height-slider" min="1.2" max="2.5" step="0.1">
+                            <div class="slider-labels"><span>Compacto (1.2)</span><span id="line-height-value">1.7</span><span>Espaçado (2.5)</span></div>
+                        </div>
+                        <div class="settings-section">
+                            <label>Prévia</label>
+                            <div class="preview-box" id="preview-box">
+                                A leitura é para a mente o que o exercício é para o corpo. Assim como o exercício físico fortalece o corpo, a leitura expande a mente, aguça o intelecto e enriquece a alma. Mergulhar em diferentes mundos e perspectivas através dos livros nos permite crescer e compreender melhor a nós mesmos e o universo ao nosso redor.
                             </div>
                         </div>
+                        <div class="settings-section">
+                            <button id="reset-reading-prefs" class="theme-btn" style="width: 100%; text-align: center;">Restaurar Padrão</button>
+                        </div>
+                        
                         
                     </div>
                 </div>
@@ -977,164 +988,376 @@ openSettingsModalMobile?.addEventListener("click", (e) => {
     if (hamburgerMenu) hamburgerMenu.classList.remove("active"); 
 });
 </script>
-    <main class="main"> 
-  <header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
-    <h1>
-      Posts
-    </h1>
-  </header>
+    <main class="main">
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">Meus Livros Lidos</h1>
+    </header>
+    <div class="post-content">
+        <p>Aqui está a lista de livros que li, exportada do Skoob.</p>
 
-  <div class="post-entries view-list">
-      <article class="post-entry card-post recent-post-highlight">
-        
-        <span class="recent-badge">Novo!</span>
-         
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/imagem-post4.webp" alt="Fotografia da escultura de bronze &#39;O Pensador&#39; de Rodin, mostrando um homem sentado em profunda contemplação contra um céu azul.">
-</figure>
 
-        <header class="entry-header post-header-flex">
-          <h2 class="entry-hint-parent">
-            <a href="http://localhost:1313/posts/reflex%C3%B5es-sobre-o-pref%C3%A1cio-de-napole%C3%A3o-mendes-de-almeida-latim-racioc%C3%ADnio-e-a-crise-na-educa%C3%A7%C3%A3o/">Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação</a>
-          </h2>
-        </header>
-
-        <p class="post-meta">
-          <span class="post-date">
-            27/04/2025
-          </span>
-          <span class="post-categories">
+        <h2>Meus Livros Lidos:</h2>
+        <ul class="book-list">
             
-              •
-              
-                <a href="http://localhost:1313/categories/educa%C3%A7%C3%A3o">Educação</a>
-              
-                <a href="http://localhost:1313/categories/leitura">Leitura</a>
-              
+            <li>
+                <strong>A Arte da Guerra</strong> — Sun Tzu
+                 (2018)
+                
+            </li>
             
-          </span>
-        </p>
-        <div class="entry-content">
-          <p>
-             Alguns dias atrás comecei a estudar latim e para isso estou usando a Gramática Latina de Napoleão Mendes de Almeida. Mas, ao ler o prefácio da obra, me encantei com as opiniões e justificativas do autor sobre as razões de se estudar latim e resolvi compará-las ao estudo de outros assuntos e também à educação em geral, visto que compartilhamos opiniões semelhantes.
-Escrevi esse texto de uma forma um pouco diferente do que estou acostumado a escrever, pois meu objetivo aqui era complementar o que li e compartilhar com os leitores esse precioso conhecimento.
-...
-          </p>
-        </div>
-
-        <a class="entry-link" aria-label="post link to Reflexões sobre o Prefácio de Napoleão Mendes de Almeida: Latim, Raciocínio e a Crise na Educação" href="http://localhost:1313/posts/reflex%C3%B5es-sobre-o-pref%C3%A1cio-de-napole%C3%A3o-mendes-de-almeida-latim-racioc%C3%ADnio-e-a-crise-na-educa%C3%A7%C3%A3o/"></a>
-      </article>
-      <article class="post-entry card-post">
-         
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/imagem-post3.webp" alt="Pintura de uma pessoa segurando uma máscara sorridente enquanto seu reflexo no espelho mostra um rosto triste e chorando, ilustrando dualidade emocional.">
-</figure>
-
-        <header class="entry-header post-header-flex">
-          <h2 class="entry-hint-parent">
-            <a href="http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/">Por que sempre estamos cansados: o diagnóstico de Han</a>
-          </h2>
-        </header>
-
-        <p class="post-meta">
-          <span class="post-date">
-            21/04/2025
-          </span>
-          <span class="post-categories">
+            <li>
+                <strong>A biblioteca da meia-noite</strong> — Matt Haig
+                 (2021)
+                
+            </li>
             
-              •
-              
-                <a href="http://localhost:1313/categories/neuroci%C3%AAncia">Neurociência</a>
-              
-                <a href="http://localhost:1313/categories/filosofia">Filosofia</a>
-              
+            <li>
+                <strong>A Coragem de não agradar</strong> — Ichiro Kishimi, Fumitake Koga
+                 (2018)
+                
+            </li>
             
-          </span>
-        </p>
-        <div class="entry-content">
-          <p>
-             Quando foi a última vez que você se sentiu exausto? Provavelmente deve ter sido recentemente, e não deve ter ocorrido apenas uma única vez nas últimas semanas. Mas, se parar para observar, todos estamos assim. Isso não aparenta ser um cansaço saudável, aquele que com um final de semana de descanso se resolve, mas sim um “cansaço infinito”, você até tenta descansar, mas não consegue.
-Felizmente, o filósofo e teórico cultural sul-coreano Byung-Chul Han tentou desvendar a origem dessa fadiga crônica em sua obra “Sociedade do Cansaço”. Usarei ela como base para esse artigo, mas também tentarei acrescentar alguns conceitos e insights que obtive durante a leitura de seu livro.
-...
-          </p>
-        </div>
-
-        <a class="entry-link" aria-label="post link to Por que sempre estamos cansados: o diagnóstico de Han" href="http://localhost:1313/posts/por-que-sempre-estamos-cansados-o-diagnostico-de-han/"></a>
-      </article>
-      <article class="post-entry card-post">
-         
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/imagem-post2.webp" alt="Ilustração de Friedrich Nietzsche e Fyodor Dostoevsky se encarando em perfil, representando um debate filosófico ou literário.">
-</figure>
-
-        <header class="entry-header post-header-flex">
-          <h2 class="entry-hint-parent">
-            <a href="http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/">Um paralelo entre Nietzsche e Dostoiévski.</a>
-          </h2>
-        </header>
-
-        <p class="post-meta">
-          <span class="post-date">
-            01/02/2025
-          </span>
-          <span class="post-categories">
+            <li>
+                <strong>A Megera Domada</strong> — William Shakespeare
+                 (2021)
+                
+            </li>
             
-              •
-              
-                <a href="http://localhost:1313/categories/leitura">Leitura</a>
-              
-                <a href="http://localhost:1313/categories/filosofia">Filosofia</a>
-              
+            <li>
+                <strong>A Mente de Stephen Hawking</strong> — Daniel Smith
+                 (2016)
+                
+            </li>
             
-          </span>
-        </p>
-        <div class="entry-content">
-          <p>
-             Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a razão? Certamente muitos filósofos e escritores já debateram sobre essas questões, mas hoje buscaremos falar mais especificamente sobre o filósofo alemão Friedrich Nietzsche (1844–1900) e o escritor russo Fiódor Dostoiévski (1821–1881), através das obras “Crepúsculo dos ídolos”(Nietzsche) e “Memórias do Subsolo”(Dostoiévski). Mas antes de falar das obras em si, me sinto na obrigação de vos dar uma breve apresentação de cada um.
-...
-          </p>
-        </div>
-
-        <a class="entry-link" aria-label="post link to Um paralelo entre Nietzsche e Dostoiévski." href="http://localhost:1313/posts/um-paralelo-entre-nietzsche-e-dostoievski/"></a>
-      </article>
-      <article class="post-entry card-post">
-         
-<figure class="entry-cover"><img loading="lazy" decoding="async" src="https://fariablog.com/images/capa-post.webp" alt="Ilustração estilizada de um cérebro azul cercado por livros abertos flutuando em correntes de energia dourada e azul, simbolizando conhecimento e aprendizado.">
-</figure>
-
-        <header class="entry-header post-header-flex">
-          <h2 class="entry-hint-parent">
-            <a href="http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/">Ler qualquer livro é melhor que não ler nenhum?</a>
-          </h2>
-        </header>
-
-        <p class="post-meta">
-          <span class="post-date">
-            28/01/2025
-          </span>
-          <span class="post-categories">
+            <li>
+                <strong>A Metamorfose</strong> — Franz Kafka
+                 (2019)
+                
+            </li>
             
-              •
-              
-                <a href="http://localhost:1313/categories/leitura">Leitura</a>
-              
-                <a href="http://localhost:1313/categories/neuroci%C3%AAncia">Neurociência</a>
-              
+            <li>
+                <strong>A Morte de Ivan Ilitch</strong> — Liev Tolstói
+                 (2023)
+                
+            </li>
             
-          </span>
-        </p>
-        <div class="entry-content">
-          <p>
-             Faz certo tempo que ando percebendo uma crescente onda de influenciadores digitais focados em leitura e livros, em si. Geralmente os livros lidos e recomendados por eles são obras de consumo que são facilmente digeridas e não possuem profundidade de conteúdo, ou para alguns, a literatura “Fast-Food”. Mas será que somente a leitura desses livros é suficiente? Ler qualquer livro é melhor que não ler nenhum? Bom, vamos tentar encontrar as respostas para esses questionamentos usando um campo de estudo que a cada dia ganha mais popularidade: a Neurociência.
-...
-          </p>
-        </div>
+            <li>
+                <strong>A prioridade da presença de Deus</strong> — Léo Matos
+                 (2022)
+                
+            </li>
+            
+            <li>
+                <strong>A revolução dos bichos</strong> — George Orwell
+                 (2007)
+                
+            </li>
+            
+            <li>
+                <strong>A Sabedoria da Insegurança</strong> — Alan Watts
+                 (2017)
+                
+            </li>
+            
+            <li>
+                <strong>A Vida dos Estoicos</strong> — Ryan Holiday, Stephen Hanselman
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>A Vida Intelectual</strong> — Antonin-Dalmace Sertillanges
+                 (2019)
+                
+            </li>
+            
+            <li>
+                <strong>A vida, o universo e tudo mais</strong> — Douglas Adams
+                 (2009)
+                
+            </li>
+            
+            <li>
+                <strong>Admirável mundo novo</strong> — Aldous Huxley
+                 (2014)
+                
+            </li>
+            
+            <li>
+                <strong>Até mais, e obrigado pelos peixes!</strong> — Douglas Adams
+                 (2010)
+                
+            </li>
+            
+            <li>
+                <strong>Campo de Batalha da Mente Para Adolescentes</strong> — Joyce Meyer, Todd Hafer
+                 (2014)
+                
+            </li>
+            
+            <li>
+                <strong>Crepúsculo dos ídolos</strong> — Friedrich Nietzsche
+                 (2017)
+                
+            </li>
+            
+            <li>
+                <strong>De quanta terra precisa um homem</strong> — Liev Tolstói
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Dentro da Baleia e outros Ensaios</strong> — George Orwell
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Dhammapada</strong> — Acharya Buddharakkhita
+                 (2013)
+                
+            </li>
+            
+            <li>
+                <strong>Diário Estoico</strong> — Ryan Holiday, Stephen Hanselman
+                 (2022)
+                
+            </li>
+            
+            <li>
+                <strong>E Tem Outra Coisa...</strong> — Douglas Adams, Eoin Colfer
+                 (2009)
+                
+            </li>
+            
+            <li>
+                <strong>Emburrecimento programado</strong> — John Taylor Gatto
+                 (2019)
+                
+            </li>
+            
+            <li>
+                <strong>Filho do Hamas</strong> — Mosab Hassan Yousef, Ron Brackin
+                 (2023)
+                
+            </li>
+            
+            <li>
+                <strong>Gente pobre</strong> — Fiódor Dostoiévski
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Hamlet</strong> — William Shakespeare
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Júlio César</strong> — William Shakespeare
+                 (2018)
+                
+            </li>
+            
+            <li>
+                <strong>Macbeth</strong> — William Shakespeare
+                 (2021)
+                 — Nota: 4/5
+            </li>
+            
+            <li>
+                <strong>Machado de Assis Várias Histórias</strong> — Machado de Assis
+                 (2013)
+                
+            </li>
+            
+            <li>
+                <strong>Manual de Epicteto</strong> — Epicteto
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Matemática Para Vencer</strong> — Laercio Vasconcelos
+                 (2018)
+                
+            </li>
+            
+            <li>
+                <strong>Maus</strong> — Art Spiegelman
+                 (2005)
+                
+            </li>
+            
+            <li>
+                <strong>Meditações</strong> — Marco Aurélio
+                 (2019)
+                
+            </li>
+            
+            <li>
+                <strong>Memórias do subsolo</strong> — Fiódor Dostoiévski
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Noites brancas</strong> — Fiodor Dostoiévski
+                 (2017)
+                
+            </li>
+            
+            <li>
+                <strong>O andar do bêbado</strong> — Leonard Mlodinow
+                 (2018)
+                
+            </li>
+            
+            <li>
+                <strong>O Cérebro Que Se Transforma</strong> — Norman Doidge
+                 (2011)
+                
+            </li>
+            
+            <li>
+                <strong>O Economista Clandestino Ataca Novamente!</strong> — Tim Hardford
+                 (2016)
+                
+            </li>
+            
+            <li>
+                <strong>O Existencialismo é um Humanismo</strong> — Jean-Paul Sartre
+                 (2012)
+                
+            </li>
+            
+            <li>
+                <strong>O guia do mochileiro das galáxias</strong> — Douglas Adams
+                 (2010)
+                
+            </li>
+            
+            <li>
+                <strong>O Homem Mais Rico Da Babilônia</strong> — George S. Clason
+                 (2015)
+                
+            </li>
+            
+            <li>
+                <strong>O Mercador de Veneza</strong> — William Shakespeare
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>O pequeno príncipe</strong> — Antoine de Saint-Exupéry
+                 (2022)
+                
+            </li>
+            
+            <li>
+                <strong>O poder do infinito</strong> — Steven Strogatz
+                 (2022)
+                
+            </li>
+            
+            <li>
+                <strong>O Príncipe</strong> — Nicolau Maquiavel
+                 (2018)
+                
+            </li>
+            
+            <li>
+                <strong>O restaurante no fim do universo</strong> — Douglas Adams
+                 (2009)
+                
+            </li>
+            
+            <li>
+                <strong>O Salmão da Dúvida</strong> — Douglas Adams
+                 (2014)
+                
+            </li>
+            
+            <li>
+                <strong>Os Inovadores</strong> — WALTER ISAACSON
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Otelo</strong> — William Shakespeare
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Por que nós dormimos</strong> — Matthew Walker
+                 (2018)
+                
+            </li>
+            
+            <li>
+                <strong>Praticamente inofensiva</strong> — Douglas Adams
+                 (2010)
+                
+            </li>
+            
+            <li>
+                <strong>Romeu e Julieta</strong> — William Shakespeare
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Só Pode Ser Brincadeira, Sr. Feynman!</strong> — Richard P. Feynman
+                 (2019)
+                
+            </li>
+            
+            <li>
+                <strong>Sobre a Brevidade da Vida</strong> — Sêneca
+                 (2020)
+                
+            </li>
+            
+            <li>
+                <strong>Sociedade do Cansaço</strong> — Byung-Chul Han
+                 (2015)
+                
+            </li>
+            
+            <li>
+                <strong>Sonho de uma noite de verão</strong> — William Shakespeare
+                 (2021)
+                
+            </li>
+            
+            <li>
+                <strong>Teoria Quântica</strong> — John Polkinghorne
+                 (2016)
+                
+            </li>
+            
+            <li>
+                <strong>Tuesdays With Morrie</strong> — Mitch Albom
+                 (1999)
+                
+            </li>
+            
+            <li>
+                <strong>1984</strong> — George Orwell
+                 (2021)
+                
+            </li>
+            
+        </ul>
+    </div>
+</article>
 
-        <a class="entry-link" aria-label="post link to Ler qualquer livro é melhor que não ler nenhum?" href="http://localhost:1313/posts/ler-qualquer-livro-e-melhor-que-nao-ler-nenhum/"></a>
-      </article>
-  </div>
-
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/view-modes.css">
-  <script src="http://localhost:1313/js/view-modes.js" defer></script>
     </main>
     
 <footer class="footer">
