@@ -1,9 +1,6 @@
 /* Container flexível para alinhar Upvote + Título */
 
-/* Define a cor de fundo do post para ser igual ao da home */
-body.single {
-    background-color: rgb(245, 245, 245) !important;
-}
+
 
 /* Adiciona a fonte Junicode */
 @font-face {
@@ -41,6 +38,11 @@ body.single {
 /* Cor temática personalizada */
 :root {
   --accent-color: #F76F53;
+  --primary: #222;
+}
+
+html.dark {
+  --primary: #fff;
 }
 
 /* Ajusta o container do post */
@@ -423,8 +425,9 @@ html.dark .post-content h1 {
   color: #ff8f78;
 }
 
-html.dark .menu-item:hover {
-  color: #ff8f78;
+html.dark .menu-item:hover,
+html.dark .menu-item-active {
+  color: #fff !important;
 }
 
 html.dark .menu-item::after {
@@ -1088,4 +1091,15 @@ body.search-modal-open {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     position: relative; /* Adicionado para criar um novo contexto de empilhamento */
+}
+
+/* Correção para o menu de configurações no tema escuro */
+html.dark .menu-item:hover,
+html.dark .menu-item-active {
+    color: #fff !important;
+}
+
+html.dark .settings-dropdown {
+    background: #232323 !important;
+    color: #fff;
 }
