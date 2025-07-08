@@ -18,7 +18,7 @@ Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a ra
 <noscript><link rel="stylesheet" href="http://localhost:1313/css/custom.css"></noscript>
 
 <script src="http://localhost:1313/js/cusdis-custom.js" defer></script>
-<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.4c87dc46e8fb6336c09e478a06fd4abd3c7dd2076ccd0c89b9b6404de7e5822a.css" integrity="sha256-TIfcRuj7YzbAnkeKBv1KvTx90gdszQyJubZATeflgio=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.140ecd3e120fbbeb87b0e28bb1f4edba136877f4765f4b1b370c3e1aef3a79f4.css" integrity="sha256-FA7NPhIPu&#43;uHsOKLsfTtuhNod/R2X0sbNww&#43;Gu86efQ=" rel="preload stylesheet" as="style">
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:1313/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313/web-app-manifest-192x192.png">
@@ -204,6 +204,8 @@ Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a ra
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <link rel="preload" as="fetch" href="http://localhost:1313/index.json">
 
+<script src="http://localhost:1313/js/settings.js"></script>
+
 <style>
 @media (max-width: 500px) {
     .menu {
@@ -327,7 +329,8 @@ Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a ra
 
 </head>
 
-<body class="list"><header class="header">
+<body class="list">
+<div id="top"></div><header class="header">
     <div class="navbar-container">
         <div class="hamburger" id="hamburger-menu" aria-label="Abrir menu" tabindex="0">
             <span></span>
@@ -368,9 +371,6 @@ Será que a razão é mesmo superior à emoção? Devemos sempre ouvir mais a ra
                         <h2><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
                             <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l-.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>
                         </svg> Configurações de Leitura</h2>
-                        <div class="beta-warning">
-                            <strong>Aviso:</strong> Este menu está em fase de testes. Em caso de problemas com o tema, tente atualizar a página (PC: F5, Mobile: puxe para baixo).
-                        </div>
                         <div class="settings-section">
                             <label>Tema</label>
                             <div class="theme-toggle-group">
@@ -503,6 +503,11 @@ html.dark .beta-warning {
     height: 20px;
 }
 
+html.dark #settings-toggle svg {
+    fill: var(--primary);
+    stroke: var(--primary);
+}
+
 #theme-toggle:hover {
     opacity: 1;
 }
@@ -622,6 +627,11 @@ html.dark .navbar-logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: var(--primary);
+}
+
+html.dark .settings-dropdown h2 svg {
+    fill: var(--primary);
 }
 .settings-dropdown .settings-section {
     margin-bottom: 1.5rem;
@@ -653,7 +663,7 @@ html.dark .navbar-logo {
 }
 html.dark .settings-dropdown .theme-btn.active, html.dark .settings-dropdown .theme-btn:focus {
     background: #fff;
-    color: #232323;
+    color: #000;
     border-color: #fff;
 }
 .settings-dropdown label {
@@ -672,6 +682,10 @@ html.dark .settings-dropdown .theme-btn.active, html.dark .settings-dropdown .th
     background: #fafafa;
     color: inherit;
 }
+html.dark .settings-dropdown {
+    background: var(--entry);
+    color: var(--primary);
+}
 html.dark .settings-dropdown select, html.dark .settings-dropdown input[type=range] {
     background: #232323;
     border-color: #444;
@@ -684,6 +698,9 @@ html.dark .settings-dropdown select, html.dark .settings-dropdown input[type=ran
     color: #888;
     margin-top: -0.2rem;
     margin-bottom: 0.5rem;
+}
+html.dark .settings-dropdown .slider-labels {
+    color: #ccc;
 }
 .settings-dropdown .accessibility-tip {
     background: #e3f0ff;
@@ -802,6 +819,8 @@ function setTheme(theme) {
         htmlElement.classList.remove('dark');
         localStorage.setItem("pref-theme", 'light');
     }
+    
+    htmlElement.offsetHeight;
     updateThemeButtons(theme);
 }
 function updateThemeButtons(currentTheme) {
@@ -1584,31 +1603,8 @@ Toda essa angústia, ele tentava calar com a leitura. Ele diz que todos temos um
     };
 
 </script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
-</script>
 
-    
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const theme = localStorage.getItem('pref-theme');
-            if (theme === 'dark') {
-                document.body.classList.add('dark');
-            } else if (theme === 'light') {
-                document.body.classList.remove('dark');
-            }
-        });
-    </script>
 </body>
 
 </html> 
